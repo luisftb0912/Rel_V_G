@@ -20,7 +20,7 @@ public class RelacionesV_P {
     private int Peso_Espec;
     private int Peso_Espec_Seco;
     private int Grav_Espec_sol;
-    //
+    //Metodos
 
     public int getRelacion_vacios() {
         return Relacion_vacios;
