@@ -12,40 +12,40 @@ package Class;
 public class RelacionesV_P {
 
     // Volumetricas
-    private int Relacion_vacios;
-    private int Porosidad;
-    private int grado_Saturacion;
+    private double Relacion_vacios;
+    private double Porosidad;
+    private double grado_Saturacion;
     // Gravimetricas
     private double Humedad;
-    private int Peso_Espec;
-    private int Peso_Espec_Seco;
-    private int Grav_Espec_sol;
+    private double Peso_Espec;
+    private double Peso_Espec_Seco;
+    private double Grav_Espec_sol;
     
     //Metodos Volumetricas
-    public int getRelacion_vacios() {
+    public double getRelacion_vacios() {
         return Relacion_vacios;
     }
 
-    public void setRelacion_vacios(int Vv, int Vs) {
-        int Resp_Vacios = Vv / Vs;
+    public void setRelacion_vacios(double Vv, double Vs) {
+        double Resp_Vacios = Vv / Vs;
         this.Relacion_vacios = Resp_Vacios;
     }
 
-    public int getPorosidad() {
+    public double getPorosidad() {
         return Porosidad;
     }
 
-    public void setPorosidad(int Vv, int Vt) {
-        int Resp_Porosidad = (Vv / Vt) * 100;
+    public void setPorosidad(double Vv, double Vt) {
+        double Resp_Porosidad = (Vv / Vt) * 100;
         this.Porosidad = Resp_Porosidad;
     }
 
-    public int getGrado_Saturacion() {
+    public double getGrado_Saturacion() {
         return grado_Saturacion;
     }
 
-    public void setGrado_Saturacion(int Vw, int Vv) {
-        int Resp_Gs = (Vw / Vv) * 100;
+    public void setGrado_Saturacion(double Vw, double Vv) {
+        double Resp_Gs = (Vw / Vv) * 100;
         this.grado_Saturacion = Resp_Gs;
     }
     
@@ -60,29 +60,29 @@ public class RelacionesV_P {
         this.Humedad = Resp_Hum;
     }
 
-    public int getPeso_Espec() {
+    public double getPeso_Espec() {
         return Peso_Espec;
     }
 
-    public void setPeso_Espec(int Wt,int Vt) {
-         int Resp_PesEs = (Wt / Vt) * 100;
+    public void setPeso_Espec(double Wt,double Vt) {
+         double Resp_PesEs = (Wt / Vt) * 100;
         this.Peso_Espec = Resp_PesEs ;
     }
 
-    public int getPeso_Espec_Seco() {
+    public double getPeso_Espec_Seco() {
         return Peso_Espec_Seco;
     }
 
-    public void setPeso_Espec_Seco(int Ws,int Vt) {
-        int Resp_PesEsSec = (Ws / Vt) * 100;
+    public void setPeso_Espec_Seco(double Ws,double Vt) {
+        double Resp_PesEsSec = (Ws / Vt) * 100;
         this.Peso_Espec_Seco = Resp_PesEsSec;
     }
 
-    public int getGrav_Espec_sol() {
+    public double getGrav_Espec_sol() {
         return Grav_Espec_sol;
     }
 
-    public void setGrav_Espec_sol(int Grav_Espec_sol) {
+    public void setGrav_Espec_sol(double Grav_Espec_sol) {
         this.Grav_Espec_sol = Grav_Espec_sol;
     }
 

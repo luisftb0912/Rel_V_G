@@ -23,7 +23,7 @@ public class Interface extends javax.swing.JFrame {
         initComponents();
         BG_TipoMuestra.add(CB_MNorm);
         BG_TipoMuestra.add(CB_MSat);
-        
+
         //
         jtVol_Vacio.setEnabled(false);
         jtVol_Agua.setEnabled(false);
@@ -98,6 +98,7 @@ public class Interface extends javax.swing.JFrame {
         jPanel34 = new javax.swing.JPanel();
         jPanel35 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -299,7 +300,7 @@ public class Interface extends javax.swing.JFrame {
         jPanel1.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, 30));
 
         jPanel23.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 140, -1));
+        jPanel1.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 110, -1));
 
         jPanel20.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, 70));
@@ -333,6 +334,9 @@ public class Interface extends javax.swing.JFrame {
 
         jPanel36.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, 40));
+
+        jPanel24.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 140, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 540, 320));
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 290));
@@ -789,18 +793,18 @@ public class Interface extends javax.swing.JFrame {
 
     private void CB_VwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_VwActionPerformed
         // TODO add your handling code here:
-        if (CB_Vw.isSelected()==true) {
+        if (CB_Vw.isSelected() == true) {
             jtVol_Agua.setEnabled(true);
-        }else{
+        } else {
             jtVol_Agua.setEnabled(false);
         }
     }//GEN-LAST:event_CB_VwActionPerformed
 
     private void CB_VvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_VvActionPerformed
         // TODO add your handling code here:
-        if (CB_Vv.isSelected()==true) {
+        if (CB_Vv.isSelected() == true) {
             jtVol_Vacio.setEnabled(true);
-        }else{
+        } else {
             jtVol_Vacio.setEnabled(false);
         }
     }//GEN-LAST:event_CB_VvActionPerformed
@@ -819,9 +823,9 @@ public class Interface extends javax.swing.JFrame {
 
     private void CB_VsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_VsActionPerformed
         // TODO add your handling code here:
-        if (CB_Vs.isSelected()==true) {
+        if (CB_Vs.isSelected() == true) {
             jtVol_solidos.setEnabled(true);
-        }else{
+        } else {
             jtVol_solidos.setEnabled(false);
         }
     }//GEN-LAST:event_CB_VsActionPerformed
@@ -909,34 +913,37 @@ public class Interface extends javax.swing.JFrame {
     private void B_CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_CalcularActionPerformed
         // TODO add your handling code here:
         // Capturar Datos
-        /*suelo.setVol_Vacios(Integer.parseInt(jtVol_Vacio.getText()));
-        suelo.setVol_Solidos(Integer.parseInt(jtVol_solidos.getText()));
-        suelo.setVol_Agua(Integer.parseInt(jtVol_Agua.getText()));
-        suelo.setVol_Aire(Integer.parseInt(jtVol_Aire.getText()));
-        suelo.setVol_Total(Integer.parseInt(jtVol_Total.getText()));
-        */suelo.setPes_Agua(Integer.parseInt(jtPes_Agua.getText()));
-        suelo.setPes_Solidos(Integer.parseInt(jtPes_Solid.getText()));
-        /*suelo.setPes_Aire(Integer.parseInt(jtPes_Aire.getText()));
-        suelo.setPes_Total(Integer.parseInt(jtPes_Total.getText()));
+        //Volumen
+        suelo.setVol_Vacios(Double.parseDouble(jtVol_Vacio.getText()));
+        suelo.setVol_Solidos(Double.parseDouble(jtVol_solidos.getText()));
+        suelo.setVol_Agua(Double.parseDouble(jtVol_Agua.getText()));
+        suelo.setVol_Aire(Double.parseDouble(jtVol_Aire.getText()));
+        suelo.setVol_Total(Double.parseDouble(jtVol_Total.getText()));
+        //peso
+        suelo.setPes_Agua(Double.parseDouble(jtPes_Agua.getText()));
+        suelo.setPes_Solidos(Double.parseDouble(jtPes_Solid.getText()));
+        suelo.setPes_Aire(Double.parseDouble(jtPes_Aire.getText()));
+        suelo.setPes_Total(Double.parseDouble(jtPes_Total.getText()));
+
         //Relacion de Vacios
         Rel_V_P.setRelacion_vacios(suelo.getVol_Vacios(), suelo.getVol_Solidos());
-        jtRel_Vacios.setText(Integer.toString(Rel_V_P.getRelacion_vacios()));
+        jtRel_Vacios.setText(Double.toString(Rel_V_P.getRelacion_vacios()));
         //Porosidad
         Rel_V_P.setPorosidad(suelo.getVol_Vacios(), suelo.getVol_Total());
-        jtPoros.setText(Integer.toString(Rel_V_P.getPorosidad()));
+        jtPoros.setText(Double.toString(Rel_V_P.getPorosidad()));
         //Grado de Saturación
         Rel_V_P.setGrado_Saturacion(suelo.getVol_Agua(), suelo.getVol_Solidos());
-        jtGrad_Sat.setText(Integer.toString(Rel_V_P.getGrado_Saturacion()));
-        *///Contenido de Humedad
+        jtGrad_Sat.setText(Double.toString(Rel_V_P.getGrado_Saturacion()));
+        //Contenido de Humedad
         Rel_V_P.setHumedad(suelo.getPes_Agua(), suelo.getPes_Solidos());
         jtHumed.setText(Double.toString(Rel_V_P.getHumedad()));
-        /*//Peso Especifico
+        //Peso Especifico
         Rel_V_P.setPeso_Espec(suelo.getPes_Total(), suelo.getVol_Total());
-        jtHumed.setText(Integer.toString(Rel_V_P.getPeso_Espec()));
+        jtHumed.setText(Double.toString(Rel_V_P.getPeso_Espec()));
         //Peso Especifico Seco
         Rel_V_P.setPeso_Espec_Seco(suelo.getPes_Solidos(), suelo.getVol_Total());
-        jtHumed.setText(Integer.toString(Rel_V_P.getPeso_Espec_Seco()));
-        //Gravedad Especifica de Solidos*/
+        jtHumed.setText(Double.toString(Rel_V_P.getPeso_Espec_Seco()));
+        //Gravedad Especifica de Solidos
     }//GEN-LAST:event_B_CalcularActionPerformed
 
     private void B_CalcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_CalcularMouseClicked
@@ -1117,6 +1124,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
