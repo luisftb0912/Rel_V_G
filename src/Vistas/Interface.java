@@ -21,6 +21,20 @@ public class Interface extends javax.swing.JFrame {
      */
     public Interface() {
         initComponents();
+        BG_TipoMuestra.add(CB_MNorm);
+        BG_TipoMuestra.add(CB_MSat);
+        
+        //
+        jtVol_Vacio.setEnabled(false);
+        jtVol_Agua.setEnabled(false);
+        jtVol_Aire.setEnabled(false);
+        jtVol_Total.setEnabled(false);
+        jtVol_solidos.setEnabled(false);
+        //
+        jtPes_Agua.setEnabled(false);
+        jtPes_Aire.setEnabled(false);
+        jtPes_Solid.setEnabled(false);
+        jtPes_Total.setEnabled(false);
     }
 
     /**
@@ -33,6 +47,7 @@ public class Interface extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
+        BG_TipoMuestra = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -58,6 +73,31 @@ public class Interface extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
+        jPanel21 = new javax.swing.JPanel();
+        jPanel25 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jPanel27 = new javax.swing.JPanel();
+        jPanel30 = new javax.swing.JPanel();
+        jPanel31 = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        jPanel32 = new javax.swing.JPanel();
+        jPanel33 = new javax.swing.JPanel();
+        jPanel34 = new javax.swing.JPanel();
+        jPanel35 = new javax.swing.JPanel();
+        jPanel36 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -92,6 +132,32 @@ public class Interface extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         CB_MSat = new javax.swing.JCheckBox();
         CB_MNorm = new javax.swing.JCheckBox();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jtPes_Esp1 = new javax.swing.JTextField();
+        jtGrav_EspSol1 = new javax.swing.JTextField();
+        jtHumed1 = new javax.swing.JTextField();
+        jtPes_EspeSec1 = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        CB_Ww2 = new javax.swing.JCheckBox();
+        CB_Ws2 = new javax.swing.JCheckBox();
+        CB_Wa2 = new javax.swing.JCheckBox();
+        CB_Wa3 = new javax.swing.JCheckBox();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jtPoros1 = new javax.swing.JTextField();
+        jtRel_Vacios1 = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jtGrad_Sat1 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        CB_Ww1 = new javax.swing.JCheckBox();
+        CB_Ws1 = new javax.swing.JCheckBox();
+        CB_Wa1 = new javax.swing.JCheckBox();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
@@ -127,14 +193,14 @@ public class Interface extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel15.setText("PESO");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 80, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 80, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setText("VOLUMEN");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 130, -1));
 
         jLabel10.setText("Vw");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(153, 51, 0));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -145,27 +211,27 @@ public class Interface extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 150, 90));
 
         jLabel9.setText("Wt");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
 
         jLabel8.setText("Ws");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, -1, -1));
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 50, -1));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 40, -1));
+        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 50, -1));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 40, -1));
 
         jLabel12.setText("Vv");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
 
         jLabel7.setText("Ww");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 40, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 40, -1));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 50, -1));
 
         jLabel11.setText("Vs");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
 
         jLabel6.setText("Wa");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(51, 204, 255));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -176,7 +242,7 @@ public class Interface extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 150, 90));
 
         jLabel13.setText("Vt");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 102, 204));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -185,15 +251,90 @@ public class Interface extends javax.swing.JFrame {
         jLabel5.setText("FASE LIQUIDA");
         jLabel5.setOpaque(true);
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 150, 90));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 50, -1));
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 50, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 50, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 50, -1));
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 60, -1));
+        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 50, -1));
+        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 50, -1));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 50, -1));
 
         jLabel2.setText("Va");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 490, 300));
+        jPanel10.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, 30));
+
+        jPanel12.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 10, 30));
+
+        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, 30));
+
+        jPanel17.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, -1, 50));
+
+        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 100, -1));
+
+        jPanel16.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 40, -1));
+
+        jPanel18.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 80, -1));
+
+        jPanel14.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 40, -1));
+
+        jPanel22.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 140, -1));
+
+        jPanel21.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, -1, 20));
+
+        jPanel25.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 160, -1));
+
+        jPanel26.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, -1, 20));
+
+        jPanel19.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, 30));
+
+        jPanel23.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 140, -1));
+
+        jPanel20.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, 70));
+
+        jPanel28.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, 20));
+
+        jPanel27.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 110));
+
+        jPanel30.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, 120));
+
+        jPanel31.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 160, -1));
+
+        jPanel29.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, -1, 110));
+
+        jPanel32.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 30));
+
+        jPanel33.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, 120));
+
+        jPanel34.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, 80));
+
+        jPanel35.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 10, 30));
+
+        jPanel36.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 540, 320));
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 290));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(51, 153, 255))); // NOI18N
@@ -372,7 +513,7 @@ public class Interface extends javax.swing.JFrame {
                 CB_MSatActionPerformed(evt);
             }
         });
-        jPanel2.add(CB_MSat, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
+        jPanel2.add(CB_MSat, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
 
         CB_MNorm.setText("Normal");
         CB_MNorm.addActionListener(new java.awt.event.ActionListener() {
@@ -380,9 +521,150 @@ public class Interface extends javax.swing.JFrame {
                 CB_MNormActionPerformed(evt);
             }
         });
-        jPanel2.add(CB_MNorm, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        jPanel2.add(CB_MNorm, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 340, 480));
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relaciones Gravimétricas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(102, 153, 255))); // NOI18N
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel42.setText("Contenido de humedad");
+        jPanel9.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        jLabel43.setText("Gravedad espec. de sól.");
+        jPanel9.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel44.setText("Peso específico");
+        jPanel9.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jtPes_Esp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtPes_Esp1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jtPes_Esp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 80, -1));
+
+        jtGrav_EspSol1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtGrav_EspSol1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jtGrav_EspSol1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 80, -1));
+
+        jtHumed1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtHumed1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jtHumed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 80, -1));
+
+        jtPes_EspeSec1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtPes_EspeSec1ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jtPes_EspeSec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 80, -1));
+
+        jLabel45.setText("Peso específico seco");
+        jPanel9.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel46.setText("%");
+        jPanel9.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 20, 20));
+
+        CB_Ww2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_Ww2ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(CB_Ww2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        CB_Ws2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_Ws2ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(CB_Ws2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, -1));
+
+        CB_Wa2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_Wa2ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(CB_Wa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+
+        CB_Wa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_Wa3ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(CB_Wa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, -1, -1));
+
+        jPanel2.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 300, 160));
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relaciones Volumétricas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(51, 204, 255))); // NOI18N
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel37.setText("Relación de vacíos");
+        jPanel8.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        jLabel38.setText("Porosidad (n)");
+        jPanel8.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jtPoros1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtPoros1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jtPoros1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 80, -1));
+
+        jtRel_Vacios1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtRel_Vacios1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jtRel_Vacios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 80, -1));
+
+        jLabel39.setText("Grado de Saturación (S)");
+        jPanel8.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jtGrad_Sat1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtGrad_Sat1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jtGrad_Sat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 80, -1));
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel40.setText("%");
+        jPanel8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 20, 20));
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel41.setText("%");
+        jPanel8.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 20, 20));
+
+        CB_Ww1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_Ww1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(CB_Ww1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+
+        CB_Ws1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_Ws1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(CB_Ws1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
+
+        CB_Wa1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_Wa1ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(CB_Wa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
+
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 300, 160));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 340, 460));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(0, 51, 255))); // NOI18N
         jPanel5.setToolTipText("Datos");
@@ -480,7 +762,7 @@ public class Interface extends javax.swing.JFrame {
 
         jPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 300, 160));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 330, 400));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 70, 330, 400));
 
         B_Calcular.setText("Calcular");
         B_Calcular.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -496,7 +778,7 @@ public class Interface extends javax.swing.JFrame {
         getContentPane().add(B_Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, -1, -1));
 
         jButton2.setText("Mostrar pasos");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 500, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 490, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -507,10 +789,20 @@ public class Interface extends javax.swing.JFrame {
 
     private void CB_VwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_VwActionPerformed
         // TODO add your handling code here:
+        if (CB_Vw.isSelected()==true) {
+            jtVol_Agua.setEnabled(true);
+        }else{
+            jtVol_Agua.setEnabled(false);
+        }
     }//GEN-LAST:event_CB_VwActionPerformed
 
     private void CB_VvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_VvActionPerformed
         // TODO add your handling code here:
+        if (CB_Vv.isSelected()==true) {
+            jtVol_Vacio.setEnabled(true);
+        }else{
+            jtVol_Vacio.setEnabled(false);
+        }
     }//GEN-LAST:event_CB_VvActionPerformed
 
     private void jtVol_AguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtVol_AguaActionPerformed
@@ -527,6 +819,11 @@ public class Interface extends javax.swing.JFrame {
 
     private void CB_VsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_VsActionPerformed
         // TODO add your handling code here:
+        if (CB_Vs.isSelected()==true) {
+            jtVol_solidos.setEnabled(true);
+        }else{
+            jtVol_solidos.setEnabled(false);
+        }
     }//GEN-LAST:event_CB_VsActionPerformed
 
     private void jtVol_solidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtVol_solidosActionPerformed
@@ -646,6 +943,62 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_B_CalcularMouseClicked
 
+    private void jtPoros1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPoros1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtPoros1ActionPerformed
+
+    private void jtRel_Vacios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtRel_Vacios1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtRel_Vacios1ActionPerformed
+
+    private void jtGrad_Sat1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtGrad_Sat1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtGrad_Sat1ActionPerformed
+
+    private void jtPes_Esp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPes_Esp1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtPes_Esp1ActionPerformed
+
+    private void jtGrav_EspSol1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtGrav_EspSol1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtGrav_EspSol1ActionPerformed
+
+    private void jtHumed1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtHumed1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtHumed1ActionPerformed
+
+    private void jtPes_EspeSec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPes_EspeSec1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtPes_EspeSec1ActionPerformed
+
+    private void CB_Ww1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Ww1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_Ww1ActionPerformed
+
+    private void CB_Ws1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Ws1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_Ws1ActionPerformed
+
+    private void CB_Wa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Wa1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_Wa1ActionPerformed
+
+    private void CB_Ws2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Ws2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_Ws2ActionPerformed
+
+    private void CB_Wa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Wa2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_Wa2ActionPerformed
+
+    private void CB_Ww2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Ww2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_Ww2ActionPerformed
+
+    private void CB_Wa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CB_Wa3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_Wa3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -682,6 +1035,7 @@ public class Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup BG_TipoMuestra;
     private javax.swing.JButton B_Calcular;
     private javax.swing.JCheckBox CB_MNorm;
     private javax.swing.JCheckBox CB_MSat;
@@ -691,9 +1045,16 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JCheckBox CB_Vv;
     private javax.swing.JCheckBox CB_Vw;
     private javax.swing.JCheckBox CB_Wa;
+    private javax.swing.JCheckBox CB_Wa1;
+    private javax.swing.JCheckBox CB_Wa2;
+    private javax.swing.JCheckBox CB_Wa3;
     private javax.swing.JCheckBox CB_Ws;
+    private javax.swing.JCheckBox CB_Ws1;
+    private javax.swing.JCheckBox CB_Ws2;
     private javax.swing.JCheckBox CB_Wt;
     private javax.swing.JCheckBox CB_Ww;
+    private javax.swing.JCheckBox CB_Ww1;
+    private javax.swing.JCheckBox CB_Ww2;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -725,19 +1086,56 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -749,16 +1147,23 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jtGrad_Sat;
+    private javax.swing.JTextField jtGrad_Sat1;
     private javax.swing.JTextField jtGrav_EspSol;
+    private javax.swing.JTextField jtGrav_EspSol1;
     private javax.swing.JTextField jtHumed;
+    private javax.swing.JTextField jtHumed1;
     private javax.swing.JTextField jtPes_Agua;
     private javax.swing.JTextField jtPes_Aire;
     private javax.swing.JTextField jtPes_Esp;
+    private javax.swing.JTextField jtPes_Esp1;
     private javax.swing.JTextField jtPes_EspeSec;
+    private javax.swing.JTextField jtPes_EspeSec1;
     private javax.swing.JTextField jtPes_Solid;
     private javax.swing.JTextField jtPes_Total;
     private javax.swing.JTextField jtPoros;
+    private javax.swing.JTextField jtPoros1;
     private javax.swing.JTextField jtRel_Vacios;
+    private javax.swing.JTextField jtRel_Vacios1;
     private javax.swing.JTextField jtVol_Agua;
     private javax.swing.JTextField jtVol_Aire;
     private javax.swing.JTextField jtVol_Total;

@@ -11,17 +11,17 @@ package Class;
  */
 public class RelacionesV_P {
 
-    //atributos Volumetricas
+    // Volumetricas
     private int Relacion_vacios;
     private int Porosidad;
     private int grado_Saturacion;
-    //Atributos Gravimetricas
+    // Gravimetricas
     private double Humedad;
     private int Peso_Espec;
     private int Peso_Espec_Seco;
     private int Grav_Espec_sol;
-    //Metodos
-
+    
+    //Metodos Volumetricas
     public int getRelacion_vacios() {
         return Relacion_vacios;
     }
@@ -48,6 +48,8 @@ public class RelacionesV_P {
         int Resp_Gs = (Vw / Vv) * 100;
         this.grado_Saturacion = Resp_Gs;
     }
+    
+    //Metodos Gravimetricas
 
     public double getHumedad() {
         return Humedad;

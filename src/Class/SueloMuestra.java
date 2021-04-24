@@ -10,6 +10,7 @@ package Class;
  * @author Name.inc
  */
 public class SueloMuestra {
+
     // atributos Volumen
     private int Vol_Vacios;
     private int Vol_Agua;
@@ -22,8 +23,20 @@ public class SueloMuestra {
     private int Pes_Aire;
     private int Pes_Total;
 
-    //Getters Y Setters
+    //Constructor
+    public SueloMuestra() {
+        this.Vol_Vacios = 0;
+        this.Vol_Agua = 0;
+        this.Vol_Solidos = 0;
+        this.Vol_Aire = 0;
+        this.Vol_Total = 0;
+        this.Pes_Agua = 0;
+        this.Pes_Solidos = 0;
+        this.Pes_Aire = 0;
+        this.Pes_Total = 0;
+    }
 
+    //Metodos Volumen
     public int getVol_Vacios() {
         return Vol_Vacios;
     }
@@ -61,8 +74,15 @@ public class SueloMuestra {
     }
 
     public void setVol_Total(int Vol_Total) {
-        this.Vol_Total = Vol_Total;
+        if (getVol_Aire() != 0 && getVol_Agua() != 0 && getVol_Solidos() != 0) {
+            this.Vol_Total = getVol_Aire() + getVol_Agua() + getVol_Solidos();
+        } else if (getVol_Vacios() != 0 && getVol_Solidos() != 0) {
+            this.Vol_Total = getVol_Vacios() + getVol_Solidos();
+        } else {
+            this.Vol_Total = Vol_Total;
+        }
     }
+    //Metodos Peso
 
     public int getPes_Agua() {
         return Pes_Agua;
@@ -95,7 +115,5 @@ public class SueloMuestra {
     public void setPes_Total(int Pes_Total) {
         this.Pes_Total = Pes_Total;
     }
-    
-    
-    
+
 }
