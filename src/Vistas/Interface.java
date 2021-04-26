@@ -12,9 +12,9 @@ import Class.*;
  * @author Alexis
  */
 public class Interface extends javax.swing.JFrame {
-
-    private SueloMuestra suelo = new SueloMuestra();
     private RelacionesV_P Rel_V_P = new RelacionesV_P();
+    private Volumen volumen=new Volumen();
+    private Peso peso=new Peso();
 
     /**
      * Creates new form Interface
@@ -914,21 +914,21 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Capturar Datos
         //Volumen
-        suelo.setVol_Vacios(Double.parseDouble(jtVol_Vacio.getText()));
-        suelo.setVol_Solidos(Double.parseDouble(jtVol_solidos.getText()));
-        suelo.setVol_Agua(Double.parseDouble(jtVol_Agua.getText()));
+        volumen.setVol_Vacios(Double.parseDouble(jtVol_Vacio.getText()));
+        volumen.setVol_Solidos(Double.parseDouble(jtVol_solidos.getText()));
+        /*suelo.setVol_Agua(Double.parseDouble(jtVol_Agua.getText()));
         suelo.setVol_Aire(Double.parseDouble(jtVol_Aire.getText()));
         suelo.setVol_Total(Double.parseDouble(jtVol_Total.getText()));
         //peso
         suelo.setPes_Agua(Double.parseDouble(jtPes_Agua.getText()));
         suelo.setPes_Solidos(Double.parseDouble(jtPes_Solid.getText()));
         suelo.setPes_Aire(Double.parseDouble(jtPes_Aire.getText()));
-        suelo.setPes_Total(Double.parseDouble(jtPes_Total.getText()));
+        suelo.setPes_Total(Double.parseDouble(jtPes_Total.getText()));*/
 
         //Relacion de Vacios
-        Rel_V_P.setRelacion_vacios(suelo.getVol_Vacios(), suelo.getVol_Solidos());
+        Rel_V_P.setRelacion_vacios(volumen.getVol_Vacios(), volumen.getVol_Solidos());
         jtRel_Vacios.setText(Double.toString(Rel_V_P.getRelacion_vacios()));
-        //Porosidad
+        /*//Porosidad
         Rel_V_P.setPorosidad(suelo.getVol_Vacios(), suelo.getVol_Total());
         jtPoros.setText(Double.toString(Rel_V_P.getPorosidad()));
         //Grado de Saturación
@@ -943,7 +943,7 @@ public class Interface extends javax.swing.JFrame {
         //Peso Especifico Seco
         Rel_V_P.setPeso_Espec_Seco(suelo.getPes_Solidos(), suelo.getVol_Total());
         jtHumed.setText(Double.toString(Rel_V_P.getPeso_Espec_Seco()));
-        //Gravedad Especifica de Solidos
+        //Gravedad Especifica de Solidos*/
     }//GEN-LAST:event_B_CalcularActionPerformed
 
     private void B_CalcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_B_CalcularMouseClicked
