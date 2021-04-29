@@ -84,7 +84,7 @@ public class RelacionesV_P {
 
     public void setGrav_Espec_sol(double Ws,double Vs) {
         //peso especifico del agua Y0=1
-        Double Y0=0.0;
+        Double Y0=1.0;
         double Resp_GravEsp=(Ws)/(Vs*Y0);
         this.Grav_Espec_sol = Resp_GravEsp;
     }
