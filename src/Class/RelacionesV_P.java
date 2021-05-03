@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Class;
 
-/**
- *
- * @author Name.inc
- */
+package Class;
 public class RelacionesV_P {
 
     // Volumetricas
@@ -36,7 +27,7 @@ public class RelacionesV_P {
     }
 
     public void setPorosidad(double Vv, double Vt) {
-        double Resp_Porosidad = (Vv / Vt) * 100;
+        double Resp_Porosidad = Math. round(((Vv / Vt) * 100)*100.0)/100.0;;
         this.Porosidad = Resp_Porosidad;
     }
 
@@ -56,7 +47,7 @@ public class RelacionesV_P {
     }
 
     public void setHumedad(double Ww, double Ws) {
-        double Resp_Hum =  Math. round(((Ww / Ws) * 100)*100.0)/100.0;;
+        double Resp_Hum =  Math. round(((Ww / Ws) * 100)*100.0)/100.0;
         this.Humedad = Resp_Hum;
     }
 
@@ -84,7 +75,7 @@ public class RelacionesV_P {
 
     public void setGrav_Espec_sol(double Ws,double Vs) {
         //peso especifico del agua Y0=1
-        Double Y0=1.0;
+        Double Y0=0.0;
         double Resp_GravEsp=(Ws)/(Vs*Y0);
         this.Grav_Espec_sol = Resp_GravEsp;
     }

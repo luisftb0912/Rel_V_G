@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Class;
 
-/**
- *
- * @author Name.inc
- */
 public class Peso {
      //atributos Peso
     private double Pes_Agua;
@@ -54,8 +45,12 @@ public class Peso {
     }
 
     public void setPes_Total(double Pes_Total) {
-        this.Pes_Total = Pes_Total;
-    }
-
-    
+        if (getPes_Aire() != 0 && getPes_Agua() != 0 && getPes_Solidos() != 0) {
+            this.Pes_Total = getPes_Aire() + getPes_Agua() + getPes_Agua();
+        } else if (getPes_Agua() != 0 && getPes_Solidos() != 0) {
+            this.Pes_Total = getPes_Agua() + getPes_Solidos();
+        } else {
+            this.Pes_Total = Pes_Total;
+        }
+    }   
 }
