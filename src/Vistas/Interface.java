@@ -61,16 +61,15 @@ public class Interface extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextFieldV_Agua = new javax.swing.JTextField();
-        jTextFieldPeso_Total = new javax.swing.JTextField();
-        jTextFieldPeso_Agua = new javax.swing.JTextField();
+        graf_Vw = new javax.swing.JTextField();
+        graf_Wt = new javax.swing.JTextField();
+        graf_Ww = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldPeso_Solido = new javax.swing.JTextField();
+        graf_Ws = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextFieldVol_Solido = new javax.swing.JTextField();
-        jTextFieldVol_Total = new javax.swing.JTextField();
+        graf_Vs = new javax.swing.JTextField();
+        graf_Vt = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
@@ -94,12 +93,13 @@ public class Interface extends javax.swing.JFrame {
         flech3 = new javax.swing.JPanel();
         texttitmuestra1 = new javax.swing.JLabel();
         texttitmuestra2 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         panelGaseoso = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
-        jTextFieldPeso_Gas1 = new javax.swing.JTextField();
+        graf_Wa = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
         graf_Vv = new javax.swing.JTextField();
-        jTextFieldVol_Gas1 = new javax.swing.JTextField();
+        graf_Va = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
         jPanel39 = new javax.swing.JPanel();
         jPanel48 = new javax.swing.JPanel();
@@ -110,7 +110,8 @@ public class Interface extends javax.swing.JFrame {
         jPanel58 = new javax.swing.JPanel();
         jPanel59 = new javax.swing.JPanel();
         jPanel61 = new javax.swing.JPanel();
-        FaseGaseosa = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -228,29 +229,21 @@ public class Interface extends javax.swing.JFrame {
 
         jLabel8.setText("Ws");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, -1, -1));
-        jPanel1.add(jTextFieldV_Agua, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 50, -1));
-        jPanel1.add(jTextFieldPeso_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 50, -1));
-        jPanel1.add(jTextFieldPeso_Agua, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 40, -1));
+        jPanel1.add(graf_Vw, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 50, -1));
+        jPanel1.add(graf_Wt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 50, -1));
+        jPanel1.add(graf_Ww, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 40, -1));
 
         jLabel7.setText("Ww");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, -1, -1));
-        jPanel1.add(jTextFieldPeso_Solido, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 50, -1));
+        jPanel1.add(graf_Ws, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 50, -1));
 
         jLabel11.setText("Vs");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
 
         jLabel13.setText("Vt");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
-
-        jLabel5.setBackground(new java.awt.Color(0, 102, 204));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("FASE LIQUIDA");
-        jLabel5.setOpaque(true);
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, 90));
-        jPanel1.add(jTextFieldVol_Solido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 50, -1));
-        jPanel1.add(jTextFieldVol_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 50, -1));
+        jPanel1.add(graf_Vs, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 50, -1));
+        jPanel1.add(graf_Vt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 50, -1));
 
         jPanel10.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, 30));
@@ -323,17 +316,25 @@ public class Interface extends javax.swing.JFrame {
         texttitmuestra2.setText("Muestra Saturado");
         jPanel1.add(texttitmuestra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
+        jLabel25.setBackground(new java.awt.Color(0, 102, 204));
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("FASE LIQUIDA");
+        jLabel25.setOpaque(true);
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, 90));
+
         panelGaseoso.setBackground(new java.awt.Color(255, 204, 51));
         panelGaseoso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel52.setText("Vv");
         panelGaseoso.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, -1));
-        panelGaseoso.add(jTextFieldPeso_Gas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 40, -1));
+        panelGaseoso.add(graf_Wa, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 40, -1));
 
         jLabel55.setText("Wa");
         panelGaseoso.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
         panelGaseoso.add(graf_Vv, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 50, -1));
-        panelGaseoso.add(jTextFieldVol_Gas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 50, -1));
+        panelGaseoso.add(graf_Va, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 50, -1));
 
         jLabel58.setText("Va");
         panelGaseoso.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, -1, -1));
@@ -365,17 +366,21 @@ public class Interface extends javax.swing.JFrame {
         jPanel61.setBackground(new java.awt.Color(0, 0, 0));
         panelGaseoso.add(jPanel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, 40));
 
-        FaseGaseosa.setBackground(new java.awt.Color(0, 204, 204));
-        FaseGaseosa.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        FaseGaseosa.setForeground(new java.awt.Color(255, 255, 255));
-        FaseGaseosa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FaseGaseosa.setText("FASE GASEOSA");
-        FaseGaseosa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FaseGaseosaActionPerformed(evt);
-            }
-        });
-        panelGaseoso.add(FaseGaseosa, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 150, 90));
+        jLabel12.setBackground(new java.awt.Color(0, 102, 204));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("FASE LIQUIDA");
+        jLabel12.setOpaque(true);
+        panelGaseoso.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 150, 90));
+
+        jLabel6.setBackground(new java.awt.Color(0, 204, 204));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("FASE LIQUIDA");
+        jLabel6.setOpaque(true);
+        panelGaseoso.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 150, 90));
 
         jPanel1.add(panelGaseoso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 540, 120));
 
@@ -424,11 +429,21 @@ public class Interface extends javax.swing.JFrame {
                 jtVol_AguaActionPerformed(evt);
             }
         });
+        jtVol_Agua.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtVol_AguaKeyReleased(evt);
+            }
+        });
         jPanel3.add(jtVol_Agua, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 70, -1));
 
         jtVol_Total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtVol_TotalActionPerformed(evt);
+            }
+        });
+        jtVol_Total.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtVol_TotalKeyReleased(evt);
             }
         });
         jPanel3.add(jtVol_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 70, -1));
@@ -448,11 +463,21 @@ public class Interface extends javax.swing.JFrame {
                 jtVol_solidosActionPerformed(evt);
             }
         });
+        jtVol_solidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtVol_solidosKeyReleased(evt);
+            }
+        });
         jPanel3.add(jtVol_solidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 70, -1));
 
         jtVol_Aire.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtVol_AireActionPerformed(evt);
+            }
+        });
+        jtVol_Aire.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtVol_AireKeyReleased(evt);
             }
         });
         jPanel3.add(jtVol_Aire, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 70, -1));
@@ -529,11 +554,21 @@ public class Interface extends javax.swing.JFrame {
                 jtPes_TotalActionPerformed(evt);
             }
         });
+        jtPes_Total.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtPes_TotalKeyReleased(evt);
+            }
+        });
         jPanel4.add(jtPes_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 70, -1));
 
         jtPes_Agua.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtPes_AguaActionPerformed(evt);
+            }
+        });
+        jtPes_Agua.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtPes_AguaKeyReleased(evt);
             }
         });
         jPanel4.add(jtPes_Agua, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 70, -1));
@@ -543,11 +578,21 @@ public class Interface extends javax.swing.JFrame {
                 jtPes_SolidActionPerformed(evt);
             }
         });
+        jtPes_Solid.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtPes_SolidKeyReleased(evt);
+            }
+        });
         jPanel4.add(jtPes_Solid, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 70, -1));
 
         jtPes_Aire.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtPes_AireActionPerformed(evt);
+            }
+        });
+        jtPes_Aire.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtPes_AireKeyTyped(evt);
             }
         });
         jPanel4.add(jtPes_Aire, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 70, -1));
@@ -825,7 +870,7 @@ public class Interface extends javax.swing.JFrame {
                 B_CalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(B_Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 760, -1, -1));
+        getContentPane().add(B_Calcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, -1, -1));
 
         jButton2.setText("Mostrar pasos");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 490, -1, -1));
@@ -837,6 +882,8 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (CB_Vt.isSelected()==true) {
             jtVol_Total.setEnabled(true);
+            String setVt=Double.toString(volumen.getVol_Total());
+            jtVol_Total.setText(setVt);
         }else{
             jtVol_Total.setEnabled(false);
         }
@@ -1076,10 +1123,6 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CB_Wa3ActionPerformed
 
-    private void FaseGaseosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FaseGaseosaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FaseGaseosaActionPerformed
-
     private void jButtonNormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNormalActionPerformed
         // TODO add your handling code here:
         panelGaseoso.setVisible(true);
@@ -1114,14 +1157,101 @@ public class Interface extends javax.swing.JFrame {
 
     private void jtVol_VacioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_VacioKeyReleased
         // TODO add your handling code here:
+        
         String Vv=jtVol_Vacio.getText();
         if (Vv.equals("")==false && Vv.matches("[0-9]*")) {
             graf_Vv.setText(Vv);
+            volumen.setVol_Vacios(Double.parseDouble(Vv));
         }else{
             graf_Vv.setText("");
-        }
-        
+        }   
     }//GEN-LAST:event_jtVol_VacioKeyReleased
+
+    private void jtVol_AguaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_AguaKeyReleased
+        // TODO add your handling code here:
+        
+        String Vw=jtVol_Agua.getText();
+        if (Vw.equals("")==false && Vw.matches("[0-9]*")) {
+            graf_Vw.setText(Vw);
+            volumen.setVol_Agua(Double.parseDouble(Vw));
+        }else{
+            graf_Vw.setText("");
+        }
+    }//GEN-LAST:event_jtVol_AguaKeyReleased
+
+    private void jtVol_solidosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_solidosKeyReleased
+        // TODO add your handling code here:
+                
+        String Vs=jtVol_solidos.getText();
+        if (Vs.equals("")==false && Vs.matches("[0-9]*")) {
+            graf_Vs.setText(Vs);
+            volumen.setVol_Solidos(Double.parseDouble(Vs));
+        }else{
+            graf_Vs.setText("");
+        }
+    }//GEN-LAST:event_jtVol_solidosKeyReleased
+
+    private void jtVol_AireKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_AireKeyReleased
+        // TODO add your handling code here:
+        String Va=jtVol_Aire.getText();
+        if (Va.equals("")==false && Va.matches("[0-9]*")) {
+            graf_Va.setText(Va);
+            volumen.setVol_Aire(Double.parseDouble(Va));
+        }else{
+            graf_Va.setText("");
+        }
+    }//GEN-LAST:event_jtVol_AireKeyReleased
+
+    private void jtVol_TotalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_TotalKeyReleased
+        // TODO add your handling code here:
+        String Vt=jtVol_Total.getText();
+        if (Vt.equals("")==false && Vt.matches("[0-9]*")) {
+            graf_Vt.setText(Vt);
+            volumen.setVol_Total(Double.parseDouble(Vt));
+        }else{
+            graf_Vt.setText("");
+        }
+    }//GEN-LAST:event_jtVol_TotalKeyReleased
+
+    private void jtPes_AguaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_AguaKeyReleased
+        // TODO add your handling code here:
+        String Ww=jtPes_Agua.getText();
+        if (Ww.equals("")==false && Ww.matches("[0-9]*")) {
+            graf_Ww.setText(Ww);
+        }else{
+            graf_Ww.setText("");
+        }
+    }//GEN-LAST:event_jtPes_AguaKeyReleased
+
+    private void jtPes_SolidKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_SolidKeyReleased
+        // TODO add your handling code here:
+        String Ws=jtPes_Solid.getText();
+        if (Ws.equals("")==false && Ws.matches("[0-9]*")) {
+            graf_Ws.setText(Ws);
+        }else{
+            graf_Ws.setText("");
+        }
+    }//GEN-LAST:event_jtPes_SolidKeyReleased
+
+    private void jtPes_AireKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_AireKeyTyped
+        // TODO add your handling code here:
+        String Wa=jtPes_Aire.getText();
+        if (Wa.equals("")==false && Wa.matches("[0-9]*")) {
+            graf_Wa.setText(Wa);
+        }else{
+            graf_Wa.setText("");
+        }
+    }//GEN-LAST:event_jtPes_AireKeyTyped
+
+    private void jtPes_TotalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_TotalKeyReleased
+        // TODO add your handling code here:
+        String Wt=jtPes_Total.getText();
+        if (Wt.equals("")==false && Wt.matches("[0-9]*")) {
+            graf_Wt.setText(Wt);
+        }else{
+            graf_Wt.setText("");
+        }
+    }//GEN-LAST:event_jtPes_TotalKeyReleased
 
     /**
      * @param args the command line arguments
@@ -1178,17 +1308,25 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JCheckBox CB_Ww;
     private javax.swing.JCheckBox CB_Ww1;
     private javax.swing.JCheckBox CB_Ww2;
-    private javax.swing.JTextField FaseGaseosa;
     private javax.swing.JPanel flech1;
     private javax.swing.JPanel flech2;
     private javax.swing.JPanel flech3;
+    private javax.swing.JTextField graf_Va;
+    private javax.swing.JTextField graf_Vs;
+    private javax.swing.JTextField graf_Vt;
     private javax.swing.JTextField graf_Vv;
+    private javax.swing.JTextField graf_Vw;
+    private javax.swing.JTextField graf_Wa;
+    private javax.swing.JTextField graf_Ws;
+    private javax.swing.JTextField graf_Wt;
+    private javax.swing.JTextField graf_Ww;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonNormal;
     private javax.swing.JButton jButtonSaturado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1201,6 +1339,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -1222,10 +1361,10 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1266,14 +1405,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextFieldPeso_Agua;
-    private javax.swing.JTextField jTextFieldPeso_Gas1;
-    private javax.swing.JTextField jTextFieldPeso_Solido;
-    private javax.swing.JTextField jTextFieldPeso_Total;
-    private javax.swing.JTextField jTextFieldV_Agua;
-    private javax.swing.JTextField jTextFieldVol_Gas1;
-    private javax.swing.JTextField jTextFieldVol_Solido;
-    private javax.swing.JTextField jTextFieldVol_Total;
     private javax.swing.JTextField jtGrad_Sat;
     private javax.swing.JTextField jtGrad_Sat1;
     private javax.swing.JTextField jtGrav_EspSol;
