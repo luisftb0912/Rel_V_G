@@ -5,21 +5,24 @@ package Class;
  * @author Name.inc
  */
 public class Volumen {
-     // atributos Volumen
+    // atributos Volumen
+
     private double Vol_Vacios;
     private double Vol_Agua;
     private double Vol_Solidos;
     private double Vol_Aire;
     private double Vol_Total;
-     //Constructor
+    //Constructor
+
     public Volumen() {
-        this.Vol_Vacios = 0;
-        this.Vol_Agua = 0;
-        this.Vol_Solidos = 0;
-        this.Vol_Aire = 0;
-        this.Vol_Total = 0;
-       
+        this.Vol_Vacios = 0.0;
+        this.Vol_Agua = 0.0;
+        this.Vol_Solidos = 0.0;
+        this.Vol_Aire = 0.0;
+        this.Vol_Total = 0.0;
+
     } //Metodos Volumen
+
     public double getVol_Vacios() {
         return Vol_Vacios;
     }
@@ -57,13 +60,8 @@ public class Volumen {
     }
 
     public void setVol_Total(double Vol_Total) {
-        if (getVol_Aire() != 0 && getVol_Agua() != 0 && getVol_Solidos() != 0) {
-            this.Vol_Total = getVol_Aire() + getVol_Agua() + getVol_Solidos();
-        } else if (getVol_Vacios() != 0 && getVol_Solidos() != 0) {
-            this.Vol_Total = getVol_Vacios() + getVol_Solidos();
-        } else {
-            this.Vol_Total = Vol_Total;
-        }
+        this.Vol_Total = getVol_Aire() + getVol_Agua() + getVol_Solidos() + getVol_Vacios();
+
     }
-    
+
 }

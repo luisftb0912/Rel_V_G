@@ -9,10 +9,10 @@ public class Peso {
     
      //Constructor
     public Peso() {
-        this.Pes_Agua = 0;
-        this.Pes_Solidos = 0;
-        this.Pes_Aire = 0;
-        this.Pes_Total = 0;
+        this.Pes_Agua = 0.0;
+        this.Pes_Solidos = 0.0;
+        this.Pes_Aire = 0.0;
+        this.Pes_Total = 0.0;
     }
     //Metodos Peso
 
