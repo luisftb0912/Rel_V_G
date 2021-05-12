@@ -59,7 +59,7 @@ public class RelacionesV_P {
     }
 
     public void setPeso_Espec(double Wt, double Vt) {
-        double Resp_PesEs = (Wt / Vt) * 100;
+        double Resp_PesEs = (Wt / Vt);
         double Resp_FPE = Math.round((Resp_PesEs) * 100.0) / 100.0;
         this.Peso_Espec = Resp_FPE;
     }

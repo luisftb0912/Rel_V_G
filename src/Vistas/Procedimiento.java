@@ -16,6 +16,29 @@ public class Procedimiento extends javax.swing.JFrame {
      */
     public Procedimiento() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        V2_JB_e.setVisible(false);
+        JSP_Pe.setVisible(false);
+        
+        V2_JB_n.setVisible(false);
+        JSP_Pn.setVisible(false);
+        
+        V2_JB_S.setVisible(false);
+        JSP_PS.setVisible(false);
+        
+        V2_JB_W.setVisible(false);
+        JSP_PW.setVisible(false);
+        
+        V2_JB_Y.setVisible(false);
+        JSP_PY.setVisible(false);
+        
+        V2_JB_Yd.setVisible(false);
+        JSP_PYd.setVisible(false);
+        
+        V2_JB_Gs.setVisible(false);
+        JSP_PGs.setVisible(false);
+        
+        
     }
 
     /**
@@ -27,21 +50,173 @@ public class Procedimiento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        JSP_Pn = new javax.swing.JScrollPane();
+        JTXTA_Pn = new javax.swing.JTextArea();
+        V2_JB_e = new javax.swing.JButton();
+        V2_JB_n = new javax.swing.JButton();
+        V2_JB_S = new javax.swing.JButton();
+        V2_JB_W = new javax.swing.JButton();
+        V2_JB_Y = new javax.swing.JButton();
+        V2_JB_Yd = new javax.swing.JButton();
+        V2_JB_Gs = new javax.swing.JButton();
+        JSP_Pe = new javax.swing.JScrollPane();
+        JTXTA_Pe = new javax.swing.JTextArea();
+        JSP_PW = new javax.swing.JScrollPane();
+        JTXTA_PW = new javax.swing.JTextArea();
+        JSP_PGs = new javax.swing.JScrollPane();
+        JTXTA_PGs = new javax.swing.JTextArea();
+        JSP_PY = new javax.swing.JScrollPane();
+        JTXTA_PY = new javax.swing.JTextArea();
+        JSP_PS = new javax.swing.JScrollPane();
+        JTXTA_PS = new javax.swing.JTextArea();
+        JSP_PYd = new javax.swing.JScrollPane();
+        JTXTA_PYd = new javax.swing.JTextArea();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1061, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("Procedimiento");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(488, 27, -1, -1));
+
+        JTXTA_Pn.setColumns(20);
+        JTXTA_Pn.setRows(5);
+        JSP_Pn.setViewportView(JTXTA_Pn);
+
+        getContentPane().add(JSP_Pn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 205, 210));
+
+        V2_JB_e.setText("Relación de Vacíos");
+        V2_JB_e.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                V2_JB_eActionPerformed(evt);
+            }
+        });
+        getContentPane().add(V2_JB_e, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 62, -1, -1));
+
+        V2_JB_n.setText("Porosidad");
+        V2_JB_n.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                V2_JB_nActionPerformed(evt);
+            }
+        });
+        getContentPane().add(V2_JB_n, new org.netbeans.lib.awtextra.AbsoluteConstraints(376, 62, -1, -1));
+
+        V2_JB_S.setText("Grado de Saturación");
+        V2_JB_S.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                V2_JB_SActionPerformed(evt);
+            }
+        });
+        getContentPane().add(V2_JB_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 62, -1, -1));
+
+        V2_JB_W.setText("Humedad");
+        V2_JB_W.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                V2_JB_WActionPerformed(evt);
+            }
+        });
+        getContentPane().add(V2_JB_W, new org.netbeans.lib.awtextra.AbsoluteConstraints(901, 62, -1, -1));
+
+        V2_JB_Y.setText("Peso Esp. Húmedo");
+        V2_JB_Y.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                V2_JB_YActionPerformed(evt);
+            }
+        });
+        getContentPane().add(V2_JB_Y, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
+
+        V2_JB_Yd.setText("Peso Esp. Seco");
+        V2_JB_Yd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                V2_JB_YdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(V2_JB_Yd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
+
+        V2_JB_Gs.setText("Gravedad Específica");
+        V2_JB_Gs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                V2_JB_GsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(V2_JB_Gs, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, -1, -1));
+
+        JTXTA_Pe.setColumns(20);
+        JTXTA_Pe.setRows(5);
+        JSP_Pe.setViewportView(JTXTA_Pe);
+
+        getContentPane().add(JSP_Pe, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 205, 210));
+
+        JTXTA_PW.setColumns(20);
+        JTXTA_PW.setRows(5);
+        JSP_PW.setViewportView(JTXTA_PW);
+
+        getContentPane().add(JSP_PW, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 100, 205, 210));
+
+        JTXTA_PGs.setColumns(20);
+        JTXTA_PGs.setRows(5);
+        JSP_PGs.setViewportView(JTXTA_PGs);
+
+        getContentPane().add(JSP_PGs, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 205, 210));
+
+        JTXTA_PY.setColumns(20);
+        JTXTA_PY.setRows(5);
+        JSP_PY.setViewportView(JTXTA_PY);
+
+        getContentPane().add(JSP_PY, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 205, 215));
+
+        JTXTA_PS.setColumns(20);
+        JTXTA_PS.setRows(5);
+        JSP_PS.setViewportView(JTXTA_PS);
+
+        getContentPane().add(JSP_PS, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 205, 210));
+
+        JTXTA_PYd.setColumns(20);
+        JTXTA_PYd.setRows(5);
+        JSP_PYd.setViewportView(JTXTA_PYd);
+
+        getContentPane().add(JSP_PYd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 205, 210));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void V2_JB_eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_eActionPerformed
+        // TODO add your handling code here:
+        JSP_Pe.setVisible(true);
+        JTXTA_Pe.setVisible(true);
+        
+    }//GEN-LAST:event_V2_JB_eActionPerformed
+
+    private void V2_JB_nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_nActionPerformed
+        // TODO add your handling code here:
+        JTXTA_Pn.setVisible(true);
+    }//GEN-LAST:event_V2_JB_nActionPerformed
+
+    private void V2_JB_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_SActionPerformed
+        // TODO add your handling code here:
+        JTXTA_PS.setVisible(true);
+    }//GEN-LAST:event_V2_JB_SActionPerformed
+
+    private void V2_JB_WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_WActionPerformed
+        // TODO add your handling code here:
+        JTXTA_PW.setVisible(true);
+    }//GEN-LAST:event_V2_JB_WActionPerformed
+
+    private void V2_JB_YActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_YActionPerformed
+        // TODO add your handling code here:
+        JTXTA_PY.setVisible(true);
+    }//GEN-LAST:event_V2_JB_YActionPerformed
+
+    private void V2_JB_YdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_YdActionPerformed
+        // TODO add your handling code here:
+        JTXTA_PYd.setVisible(true);
+    }//GEN-LAST:event_V2_JB_YdActionPerformed
+
+    private void V2_JB_GsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_GsActionPerformed
+        // TODO add your handling code here:
+        JTXTA_PGs.setVisible(true);
+    }//GEN-LAST:event_V2_JB_GsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +254,27 @@ public class Procedimiento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JScrollPane JSP_PGs;
+    public static javax.swing.JScrollPane JSP_PS;
+    public static javax.swing.JScrollPane JSP_PW;
+    public static javax.swing.JScrollPane JSP_PY;
+    public static javax.swing.JScrollPane JSP_PYd;
+    public static javax.swing.JScrollPane JSP_Pe;
+    public static javax.swing.JScrollPane JSP_Pn;
+    public static javax.swing.JTextArea JTXTA_PGs;
+    public static javax.swing.JTextArea JTXTA_PS;
+    public static javax.swing.JTextArea JTXTA_PW;
+    public static javax.swing.JTextArea JTXTA_PY;
+    public static javax.swing.JTextArea JTXTA_PYd;
+    public static javax.swing.JTextArea JTXTA_Pe;
+    public static javax.swing.JTextArea JTXTA_Pn;
+    public static javax.swing.JButton V2_JB_Gs;
+    public static javax.swing.JButton V2_JB_S;
+    public static javax.swing.JButton V2_JB_W;
+    public static javax.swing.JButton V2_JB_Y;
+    public static javax.swing.JButton V2_JB_Yd;
+    public static javax.swing.JButton V2_JB_e;
+    public static javax.swing.JButton V2_JB_n;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
