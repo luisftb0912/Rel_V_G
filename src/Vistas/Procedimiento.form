@@ -159,7 +159,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="V2_JB_Gs">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gravedad Espec&#xed;fica"/>
+        <Property name="text" type="java.lang.String" value="Gravedad Esp. S&#xf3;lido"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="V2_JB_GsActionPerformed"/>
@@ -169,7 +169,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="630" y="360" width="-1" height="-1"/>
+          <AbsoluteConstraints x="650" y="360" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -225,7 +225,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="600" y="410" width="205" height="210"/>
+          <AbsoluteConstraints x="600" y="410" width="250" height="210"/>
         </Constraint>
       </Constraints>
 

@@ -28,11 +28,17 @@ public class Volumen {
     }
 
     public void setVol_Vacios(double Vol_Vacios) {
-        if (Vol_Agua != 0 || Vol_Aire != 0) {
-            this.Vol_Vacios = getVol_Aire() + getVol_Agua();
+        if (Vol_Vacios != 0) {
+            if (Vol_Vacios <= (getVol_Agua() + getVol_Aire())) {
+                this.Vol_Vacios = getVol_Agua() + getVol_Aire();
+            } else {
+                this.Vol_Vacios = Vol_Vacios;
+            }
         } else {
-            this.Vol_Vacios = Vol_Vacios;
+
+            this.Vol_Vacios = getVol_Agua() + getVol_Aire();
         }
+
     }
 
     public double getVol_Agua() {
@@ -40,7 +46,7 @@ public class Volumen {
     }
 
     public void setVol_Agua(double Vol_Agua) {
-            this.Vol_Agua = Vol_Agua;
+        this.Vol_Agua = Vol_Agua;
     }
 
     public double getVol_Solidos() {
@@ -65,10 +71,20 @@ public class Volumen {
     }
 
     public void setVol_Total(double Vol_Total) {
-        if (Vol_Solidos != 0 || Vol_Vacios != 0) {
-            this.Vol_Total = getVol_Solidos() + getVol_Vacios();
+        if (Vol_Total != 0) {
+            if (Vol_Total <= (getVol_Solidos() + getVol_Vacios())) {
+                this.Vol_Total = getVol_Solidos() + getVol_Vacios();
+            } else {
+                this.Vol_Total = Vol_Total;
+                this.Vol_Solidos = 0.0;
+                this.Vol_Vacios = 0.0;
+                this.Vol_Agua = 0.0;
+                this.Vol_Aire = 0.0;
+            }
         } else {
-            this.Vol_Total = Vol_Total;
+            if (getVol_Solidos() != 0 || getVol_Agua() != 0 || getVol_Aire() != 0) {
+                this.Vol_Total = getVol_Solidos() + getVol_Vacios();
+            }
         }
     }
 

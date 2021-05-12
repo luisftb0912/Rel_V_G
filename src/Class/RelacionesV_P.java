@@ -79,9 +79,9 @@ public class RelacionesV_P {
     }
 
     public void setGrav_Espec_sol(double Ws, double Vs) {
-        //peso especifico del agua Y0=1
-        Double Y0 = 1.0;
-        double Resp_GravEsp = (Ws) / (Vs * Y0);
+        //peso especifico del agua Yw=1 (en laboratorio)
+        Double Yw = 1.0;
+        double Resp_GravEsp = (Ws) / (Vs * Yw);
         double Resp_GE = Math.round((Resp_GravEsp) * 100.0) / 100.0;
         this.Grav_Espec_sol = Resp_GE;
     }

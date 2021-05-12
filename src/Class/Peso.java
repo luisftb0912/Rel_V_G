@@ -45,10 +45,19 @@ public class Peso {
     }
 
     public void setPes_Total(double Pes_Total) {
-        if (Pes_Agua!=0 ||Pes_Aire!=0 ||Pes_Solidos!=0) {
-            this.Pes_Total = getPes_Agua()+ getPes_Aire()+ getPes_Solidos();
-        }else {
-           this.Pes_Total = Pes_Total;
+         if (Pes_Total != 0) {
+            if (Pes_Total <= (getPes_Agua() + getPes_Aire()+getPes_Solidos())) {
+                this.Pes_Total = getPes_Agua() + getPes_Aire()+getPes_Solidos();
+            } else {
+                this.Pes_Total = Pes_Total;
+                this.Pes_Aire = 0.0;
+                this.Pes_Solidos = 0.0;
+                this.Pes_Agua = 0.0;
+            }
+        } else {
+            if (getPes_Agua() != 0 || getPes_Aire() != 0 || getPes_Solidos() != 0) {
+                this.Pes_Total = getPes_Agua() + getPes_Aire()+getPes_Solidos();
+            }
         }
     }   
 }

@@ -134,13 +134,13 @@ public class Procedimiento extends javax.swing.JFrame {
         });
         getContentPane().add(V2_JB_Yd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, -1, -1));
 
-        V2_JB_Gs.setText("Gravedad Específica");
+        V2_JB_Gs.setText("Gravedad Esp. Sólido");
         V2_JB_Gs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 V2_JB_GsActionPerformed(evt);
             }
         });
-        getContentPane().add(V2_JB_Gs, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, -1, -1));
+        getContentPane().add(V2_JB_Gs, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, -1, -1));
 
         JTXTA_Pe.setColumns(20);
         JTXTA_Pe.setRows(5);
@@ -158,7 +158,7 @@ public class Procedimiento extends javax.swing.JFrame {
         JTXTA_PGs.setRows(5);
         JSP_PGs.setViewportView(JTXTA_PGs);
 
-        getContentPane().add(JSP_PGs, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 205, 210));
+        getContentPane().add(JSP_PGs, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 250, 210));
 
         JTXTA_PY.setColumns(20);
         JTXTA_PY.setRows(5);
@@ -191,31 +191,37 @@ public class Procedimiento extends javax.swing.JFrame {
     private void V2_JB_nActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_nActionPerformed
         // TODO add your handling code here:
         JTXTA_Pn.setVisible(true);
+        JSP_Pn.setVisible(true);
     }//GEN-LAST:event_V2_JB_nActionPerformed
 
     private void V2_JB_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_SActionPerformed
         // TODO add your handling code here:
         JTXTA_PS.setVisible(true);
+        JSP_PS.setVisible(true);
     }//GEN-LAST:event_V2_JB_SActionPerformed
 
     private void V2_JB_WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_WActionPerformed
         // TODO add your handling code here:
         JTXTA_PW.setVisible(true);
+        JSP_PW.setVisible(true);
     }//GEN-LAST:event_V2_JB_WActionPerformed
 
     private void V2_JB_YActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_YActionPerformed
         // TODO add your handling code here:
         JTXTA_PY.setVisible(true);
+        JSP_PY.setVisible(true);
     }//GEN-LAST:event_V2_JB_YActionPerformed
 
     private void V2_JB_YdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_YdActionPerformed
         // TODO add your handling code here:
         JTXTA_PYd.setVisible(true);
+        JSP_PYd.setVisible(true);
     }//GEN-LAST:event_V2_JB_YdActionPerformed
 
     private void V2_JB_GsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V2_JB_GsActionPerformed
         // TODO add your handling code here:
         JTXTA_PGs.setVisible(true);
+        JSP_PGs.setVisible(true);
     }//GEN-LAST:event_V2_JB_GsActionPerformed
 
     /**
