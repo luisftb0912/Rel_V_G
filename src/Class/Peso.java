@@ -1,13 +1,14 @@
 package Class;
 
 public class Peso {
-     //atributos Peso
+    //atributos Peso
+
     private double Pes_Agua;
     private double Pes_Solidos;
     private double Pes_Aire;
     private double Pes_Total;
-    
-     //Constructor
+
+    //Constructor
     public Peso() {
         this.Pes_Agua = 0.0;
         this.Pes_Solidos = 0.0;
@@ -45,19 +46,25 @@ public class Peso {
     }
 
     public void setPes_Total(double Pes_Total) {
-         if (Pes_Total != 0) {
-            if (Pes_Total <= (getPes_Agua() + getPes_Aire()+getPes_Solidos())) {
-                this.Pes_Total = getPes_Agua() + getPes_Aire()+getPes_Solidos();
-            } else {
+        if (Pes_Total != 0) {
+            if (Pes_Total >= (getPes_Agua() + getPes_Aire() + getPes_Solidos())) {
                 this.Pes_Total = Pes_Total;
-                this.Pes_Aire = 0.0;
-                this.Pes_Solidos = 0.0;
-                this.Pes_Agua = 0.0;
+                if (getPes_Aire() == 0) {
+                    this.Pes_Aire = 0.0;
+                }
+                if (getPes_Solidos() == 0) {
+                    this.Pes_Solidos = 0.0;
+                }
+                if (getPes_Agua() == 0) {
+                    this.Pes_Agua = 0.0;
+                }
+            } else {
+                this.Pes_Total = getPes_Agua() + getPes_Aire() + getPes_Solidos();
             }
         } else {
             if (getPes_Agua() != 0 || getPes_Aire() != 0 || getPes_Solidos() != 0) {
-                this.Pes_Total = getPes_Agua() + getPes_Aire()+getPes_Solidos();
+                this.Pes_Total = getPes_Agua() + getPes_Aire() + getPes_Solidos();
             }
         }
-    }   
+    }
 }

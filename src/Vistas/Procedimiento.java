@@ -158,13 +158,13 @@ public class Procedimiento extends javax.swing.JFrame {
         JTXTA_PGs.setRows(5);
         JSP_PGs.setViewportView(JTXTA_PGs);
 
-        getContentPane().add(JSP_PGs, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 410, 250, 210));
+        getContentPane().add(JSP_PGs, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 250, 220));
 
         JTXTA_PY.setColumns(20);
         JTXTA_PY.setRows(5);
         JSP_PY.setViewportView(JTXTA_PY);
 
-        getContentPane().add(JSP_PY, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 205, 215));
+        getContentPane().add(JSP_PY, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 205, 220));
 
         JTXTA_PS.setColumns(20);
         JTXTA_PS.setRows(5);
@@ -176,7 +176,7 @@ public class Procedimiento extends javax.swing.JFrame {
         JTXTA_PYd.setRows(5);
         JSP_PYd.setViewportView(JTXTA_PYd);
 
-        getContentPane().add(JSP_PYd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, 205, 210));
+        getContentPane().add(JSP_PYd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 205, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
