@@ -41,7 +41,7 @@ public class Peso {
         if (Pes_Solidos != 0) {
             this.Pes_Solidos = Pes_Solidos;
         } else {
-            if ((getPes_Aire() + getPes_Agua()) <= getPes_Total() && (getPes_Agua() != 0 && getPes_Aire() != 0)) {
+            if ((getPes_Aire() + getPes_Agua()+getPes_Solidos()) <= getPes_Total() && getPes_Agua() != 0 ) {
                 this.Pes_Solidos = getPes_Total() - (getPes_Agua() + getPes_Aire());
             }else{
                 this.Pes_Total =0.0;

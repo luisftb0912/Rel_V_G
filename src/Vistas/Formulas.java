@@ -75,13 +75,13 @@ public final class Formulas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Fórmulas");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
-        getContentPane().add(JB_e, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 147, 90));
-        getContentPane().add(JB_W, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 147, 90));
-        getContentPane().add(JB_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 147, 90));
-        getContentPane().add(JB_n, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 147, 90));
-        getContentPane().add(JB_Y, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 147, 90));
-        getContentPane().add(JB_Yd, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 147, 90));
-        getContentPane().add(JB_Gs, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 147, 90));
+        getContentPane().add(JB_e, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 100, 60));
+        getContentPane().add(JB_W, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 147, 60));
+        getContentPane().add(JB_S, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 147, 60));
+        getContentPane().add(JB_n, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 130, 60));
+        getContentPane().add(JB_Y, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 100, 60));
+        getContentPane().add(JB_Yd, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 130, 60));
+        getContentPane().add(JB_Gs, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 147, 60));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Relación de vacíos");
@@ -101,31 +101,31 @@ public final class Formulas extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Gravedad Esp. Sólido");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Peso Esp. Húmedo");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Peso Esp. Seco");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, -1));
-        getContentPane().add(JB_Vt, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 150, 90));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
+        getContentPane().add(JB_Vt, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 210, 150, 70));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Volumen Total");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, -1, -1));
-        getContentPane().add(JB_Wt, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, 150, 90));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, -1, -1));
+        getContentPane().add(JB_Wt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 150, 60));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("PesoTotal");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 150, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel10.setText("Tablas");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, -1, -1));
-        getContentPane().add(JB_TnYd, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 450, 460, 230));
-        getContentPane().add(JB_TS, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 470, 230));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, -1, -1));
+        getContentPane().add(JB_TnYd, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 360, 180));
+        getContentPane().add(JB_TS, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 420, 180));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

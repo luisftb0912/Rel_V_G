@@ -83,15 +83,7 @@ public class Volumen {
     }
 
     public void setVol_Solidos(double Vol_Solidos) {
-        if (Vol_Solidos != 0) {
-            this.Vol_Solidos = Vol_Solidos;
-        } else {
-            if (getVol_Total() != 0 && getVol_Vacios() != 0 && (getVol_Total() >= getVol_Vacios())) {
-                this.Vol_Solidos = getVol_Total() - getVol_Vacios();
-            } else {
-                this.Vol_Solidos = 0.0;
-            }
-        }
+
         if (Vol_Solidos != 0) {
             if (getVol_Total() != 0) {
                 if (Vol_Solidos <= getVol_Total()) {

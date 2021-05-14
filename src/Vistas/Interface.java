@@ -1394,7 +1394,7 @@ public final class Interface extends javax.swing.JFrame {
         }
 
         //Volumen de sólidos
-        if (volumen.getVol_Vacios() == 0.0) {
+        if (volumen.getVol_Solidos()== 0.0&&volumen.getVol_Total()== 0.0) {
             double Vsolido = peso.getPes_Solidos() / Rel_V_P.getPeso_Espec_solido();
             double Resp_Vsolido = Math.round((Vsolido) * 100.0) / 100.0;
             volumen.setVol_Solidos(Resp_Vsolido);
@@ -1402,7 +1402,7 @@ public final class Interface extends javax.swing.JFrame {
             jtVol_solidos.setText(Double.toString(volumen.getVol_Solidos()));
 
         } else {
-            volumen.setVol_Solidos(0.0);
+            volumen.setVol_Solidos(Double.parseDouble(Vs));
             graf_Vs.setText(Double.toString(volumen.getVol_Solidos()));
             jtVol_solidos.setText(Double.toString(volumen.getVol_Solidos()));
         }
