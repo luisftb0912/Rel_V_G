@@ -11,6 +11,12 @@ public class RelacionesV_P {
     private double Peso_Espec;
     private double Peso_Espec_Seco;
     private double Grav_Espec_sol;
+    private double Peso_Espec_agua;
+    private double Peso_Espec_solido;
+
+    public RelacionesV_P() {
+        this.Peso_Espec_agua=1.0;
+    }
 
     //Metodos Volumetricas
     public double getRelacion_vacios() {
@@ -80,10 +86,38 @@ public class RelacionesV_P {
 
     public void setGrav_Espec_sol(double Ws, double Vs) {
         //peso especifico del agua Yw=1 (en laboratorio)
-        Double Yw = 1.0;
-        double Resp_GravEsp = (Ws) / (Vs * Yw);
+        double Resp_GravEsp = (Ws) / (Vs * getPeso_Espec_agua());
         double Resp_GE = Math.round((Resp_GravEsp) * 100.0) / 100.0;
         this.Grav_Espec_sol = Resp_GE;
     }
 
+    public double getPeso_Espec_agua() {
+        return Peso_Espec_agua;
+    }
+
+    public void setPeso_Espec_agua(double Grav_Espec_agua, double Ww, double Vw) {
+        if ( Ww != 0 && Vw != 0) {
+            this.Peso_Espec_agua = Ww / Vw;
+        } else if (Grav_Espec_agua == 0.0) {
+            this.Peso_Espec_agua = 1.0;
+        } else {
+            this.Peso_Espec_agua = Grav_Espec_agua;
+        }
+    }
+
+    public double getPeso_Espec_solido() {
+        return Peso_Espec_solido;
+    }
+
+    public void setPeso_Espec_solido(double Peso_Espec_solido, double Ws, double Vs) {
+         if ( Ws != 0 && Vs != 0) {
+           this.Peso_Espec_solido = Ws / Vs;
+        } else if (Peso_Espec_solido == 0.0) {
+            this.Peso_Espec_solido  = 1.0;
+        } else {
+            this.Peso_Espec_solido  = Peso_Espec_solido ;
+        }
+    }
+    
+    
 }

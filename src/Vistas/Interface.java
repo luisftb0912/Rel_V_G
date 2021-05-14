@@ -13,9 +13,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -25,9 +24,9 @@ import javax.swing.JTextField;
  */
 public final class Interface extends javax.swing.JFrame {
 
-    private RelacionesV_P Rel_V_P = new RelacionesV_P();
-    private Volumen volumen = new Volumen();
-    private Peso peso = new Peso();
+    private final RelacionesV_P Rel_V_P = new RelacionesV_P();
+    private final Volumen volumen = new Volumen();
+    private final Peso peso = new Peso();
 
     /**
      * Creates new form Interface
@@ -77,49 +76,23 @@ public final class Interface extends javax.swing.JFrame {
 
         B_limpiar.setEnabled(false);
 
-        //Panel de datos
-        //Volumen
-        jtVol_Vacio.setEnabled(false);
-        jtVol_Agua.setEnabled(false);
-        jtVol_Aire.setEnabled(false);
-        jtVol_Total.setEnabled(false);
-        jtVol_solidos.setEnabled(false);
-        jCB_VolAire.setEnabled(false);
-        //Peso
-        jtPes_Agua.setEnabled(false);
-        jtPes_Aire.setEnabled(false);
-        jtPes_Solid.setEnabled(false);
-        jtPes_Total.setEnabled(false);
-        jCB_PesoAire.setEnabled(false);
         flech3.setVisible(false);
         texttitmuestra1.setVisible(true);
         texttitmuestra2.setVisible(false);
-        //Inicializar datos
-        //Volumen
-        jtVol_Aire.setText("0.0");
-        jtVol_Total.setText("0.0");
-        jtVol_Vacio.setText("0.0");
-        jtVol_solidos.setText("0.0");
-        jtVol_Agua.setText("0.0");
-        graf_Va.setText("0.0");
-        graf_Vw.setText("0.0");
-        graf_Vs.setText("0.0");
-        graf_Vv.setText("0.0");
-        graf_Vt.setText("0.0");
 
-        //Peso
-        jtPes_Agua.setText("0.0");
-        jtPes_Aire.setText("0.0");
-        jtPes_Solid.setText("0.0");
-        jtPes_Total.setText("0.0");
-        graf_Wa.setText("0.0");
-        graf_Ws.setText("0.0");
-        graf_Ww.setText("0.0");
-        graf_Wt.setText("0.0");
+        desactivar(panelvolumen);
+        desactivar(panelpeso);
+        desactivar(paneldatos);
+        desactivar(jPanelGraficaMuestra);
+        desactivar(panelGaseoso);
+        jtPes_EspAgua.setText("1.0");
+        jtPes_EspSol.setText("1.0");
+
         //
         B_Procedimiento.setEnabled(false);
     }
     private int countcal = 0;
+    private int countgraf = 0;
 
     public void Limpiar(JPanel panel) {
         for (Object RVG : panel.getComponents()) {
@@ -141,7 +114,31 @@ public final class Interface extends javax.swing.JFrame {
         B_Graf.setEnabled(false);
         B_Calcular.setEnabled(false);
         B_Procedimiento.setEnabled(false);
-        B_limpiar.setEnabled(false);
+
+    }
+
+    public void desactivar(JPanel panel) {
+        for (Object RVG : panel.getComponents()) {
+            if (RVG instanceof JCheckBox) {
+                ((JCheckBox) RVG).setSelected(false);
+                ((JCheckBox) RVG).setEnabled(false);
+            }
+            if (RVG instanceof JTextField) {
+                ((JTextField) RVG).setText("0.0");
+                ((JTextField) RVG).setEnabled(false);
+            }
+
+        }
+    }
+
+    public void activar(JPanel panel) {
+        for (Object RVG : panel.getComponents()) {
+            if (RVG instanceof JCheckBox) {
+                ((JCheckBox) RVG).setSelected(false);
+                ((JCheckBox) RVG).setEnabled(true);
+            }
+
+        }
 
     }
 
@@ -215,7 +212,7 @@ public final class Interface extends javax.swing.JFrame {
         jPanel35 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jPanelDatos = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        paneldatos = new javax.swing.JPanel();
         panelvolumen = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -228,18 +225,31 @@ public final class Interface extends javax.swing.JFrame {
         textaire = new javax.swing.JLabel();
         jtVol_Vacio = new javax.swing.JTextField();
         jCB_VolAire = new javax.swing.JCheckBox();
+        jCB_VolAg = new javax.swing.JCheckBox();
+        jCB_VolTotal = new javax.swing.JCheckBox();
+        jCB_VolS = new javax.swing.JCheckBox();
+        jCB_VolV = new javax.swing.JCheckBox();
         panelpeso = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         textaire2 = new javax.swing.JLabel();
         jtPes_Total = new javax.swing.JTextField();
-        jtPes_Agua = new javax.swing.JTextField();
         jtPes_Solid = new javax.swing.JTextField();
         jtPes_Aire = new javax.swing.JTextField();
         jCB_PesoAire = new javax.swing.JCheckBox();
+        jCB_PesTotal = new javax.swing.JCheckBox();
+        jCB_PesS = new javax.swing.JCheckBox();
+        jtPes_Agua = new javax.swing.JTextField();
+        jCB_PesAg = new javax.swing.JCheckBox();
         B_Graf = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jtPes_EspAgua = new javax.swing.JTextField();
+        jCB_PesEspAg = new javax.swing.JCheckBox();
         jLabel3 = new javax.swing.JLabel();
+        jtPes_EspSol = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jCB_PesEspSol = new javax.swing.JCheckBox();
         panelQCalc = new javax.swing.JPanel();
         jPanelRelacionesVolumetricas = new javax.swing.JPanel();
         jCBRelacionVacio = new javax.swing.JCheckBox();
@@ -462,9 +472,9 @@ public final class Interface extends javax.swing.JFrame {
         jPanelDatos.setToolTipText("Datos");
         jPanelDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingresar Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
-        jPanel1.setToolTipText("Ingresar Datos");
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        paneldatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingresar Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        paneldatos.setToolTipText("Ingresar Datos");
+        paneldatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelvolumen.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Volumen", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(204, 0, 204))); // NOI18N
         panelvolumen.setToolTipText("Volumen");
@@ -479,6 +489,11 @@ public final class Interface extends javax.swing.JFrame {
         jLabel23.setText("Volumen de agua");
         panelvolumen.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
+        jtVol_Agua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtVol_AguaActionPerformed(evt);
+            }
+        });
         jtVol_Agua.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtVol_AguaKeyReleased(evt);
@@ -496,11 +511,6 @@ public final class Interface extends javax.swing.JFrame {
         jLabel24.setText("Volumen de sólidos");
         panelvolumen.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jtVol_solidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtVol_solidosActionPerformed(evt);
-            }
-        });
         jtVol_solidos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtVol_solidosKeyReleased(evt);
@@ -508,11 +518,6 @@ public final class Interface extends javax.swing.JFrame {
         });
         panelvolumen.add(jtVol_solidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 70, -1));
 
-        jtVol_Aire.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtVol_AireActionPerformed(evt);
-            }
-        });
         jtVol_Aire.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtVol_AireKeyReleased(evt);
@@ -523,11 +528,6 @@ public final class Interface extends javax.swing.JFrame {
         textaire.setText("Volumen del aire");
         panelvolumen.add(textaire, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
-        jtVol_Vacio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtVol_VacioActionPerformed(evt);
-            }
-        });
         jtVol_Vacio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtVol_VacioKeyReleased(evt);
@@ -543,7 +543,39 @@ public final class Interface extends javax.swing.JFrame {
         });
         panelvolumen.add(jCB_VolAire, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
 
-        jPanel1.add(panelvolumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 270, 200));
+        jCB_VolAg.setToolTipText("Editar");
+        jCB_VolAg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_VolAgActionPerformed(evt);
+            }
+        });
+        panelvolumen.add(jCB_VolAg, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+
+        jCB_VolTotal.setToolTipText("Editar");
+        jCB_VolTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_VolTotalActionPerformed(evt);
+            }
+        });
+        panelvolumen.add(jCB_VolTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, -1, -1));
+
+        jCB_VolS.setToolTipText("Editar");
+        jCB_VolS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_VolSActionPerformed(evt);
+            }
+        });
+        panelvolumen.add(jCB_VolS, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
+
+        jCB_VolV.setToolTipText("Editar");
+        jCB_VolV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_VolVActionPerformed(evt);
+            }
+        });
+        panelvolumen.add(jCB_VolV, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+
+        paneldatos.add(panelvolumen, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 270, 200));
 
         panelpeso.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Peso", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(51, 51, 255))); // NOI18N
         panelpeso.setToolTipText("Peso");
@@ -561,29 +593,12 @@ public final class Interface extends javax.swing.JFrame {
         textaire2.setText("Peso del aire");
         panelpeso.add(textaire2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        jtPes_Total.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtPes_TotalActionPerformed(evt);
-            }
-        });
         jtPes_Total.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtPes_TotalKeyReleased(evt);
             }
         });
         panelpeso.add(jtPes_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 70, -1));
-
-        jtPes_Agua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtPes_AguaActionPerformed(evt);
-            }
-        });
-        jtPes_Agua.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jtPes_AguaKeyReleased(evt);
-            }
-        });
-        panelpeso.add(jtPes_Agua, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, -1));
 
         jtPes_Solid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -597,11 +612,6 @@ public final class Interface extends javax.swing.JFrame {
         });
         panelpeso.add(jtPes_Solid, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 70, -1));
 
-        jtPes_Aire.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtPes_AireActionPerformed(evt);
-            }
-        });
         jtPes_Aire.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtPes_AireKeyReleased(evt);
@@ -617,20 +627,86 @@ public final class Interface extends javax.swing.JFrame {
         });
         panelpeso.add(jCB_PesoAire, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, -1));
 
-        jPanel1.add(panelpeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 240, 140));
+        jCB_PesTotal.setToolTipText("Editar");
+        jCB_PesTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_PesTotalActionPerformed(evt);
+            }
+        });
+        panelpeso.add(jCB_PesTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+
+        jCB_PesS.setToolTipText("Editar");
+        jCB_PesS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_PesSActionPerformed(evt);
+            }
+        });
+        panelpeso.add(jCB_PesS, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+
+        jtPes_Agua.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtPes_AguaKeyReleased(evt);
+            }
+        });
+        panelpeso.add(jtPes_Agua, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, -1));
+
+        jCB_PesAg.setToolTipText("Editar");
+        jCB_PesAg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_PesAgActionPerformed(evt);
+            }
+        });
+        panelpeso.add(jCB_PesAg, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+
+        paneldatos.add(panelpeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 300, 140));
 
         B_Graf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 B_GrafActionPerformed(evt);
             }
         });
-        jPanel1.add(B_Graf, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 60, 70));
+        paneldatos.add(B_Graf, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 50, 50));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setText("Gráfico");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, -1, -1));
+        jLabel5.setText("Otros ");
+        paneldatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
 
-        jPanelDatos.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 560, 250));
+        jtPes_EspAgua.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtPes_EspAguaKeyReleased(evt);
+            }
+        });
+        paneldatos.add(jtPes_EspAgua, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 70, -1));
+
+        jCB_PesEspAg.setToolTipText("Editar");
+        jCB_PesEspAg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_PesEspAgActionPerformed(evt);
+            }
+        });
+        paneldatos.add(jCB_PesEspAg, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
+
+        jLabel3.setText("Peso Esp. Agua");
+        paneldatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
+
+        jtPes_EspSol.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtPes_EspSolKeyReleased(evt);
+            }
+        });
+        paneldatos.add(jtPes_EspSol, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 70, -1));
+
+        jLabel7.setText("Peso Esp. Solido");
+        paneldatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, -1, -1));
+
+        jCB_PesEspSol.setToolTipText("Editar");
+        jCB_PesEspSol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_PesEspSolActionPerformed(evt);
+            }
+        });
+        paneldatos.add(jCB_PesEspSol, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
+
+        jPanelDatos.add(paneldatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 610, 250));
 
         panelQCalc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "¿Que desea calcular?", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         panelQCalc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -652,7 +728,7 @@ public final class Interface extends javax.swing.JFrame {
                 jCBPorosidadActionPerformed(evt);
             }
         });
-        jPanelRelacionesVolumetricas.add(jCBPorosidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanelRelacionesVolumetricas.add(jCBPorosidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         jCBGradoSaturacion.setText("Grado de Saturación (S)");
         jCBGradoSaturacion.addActionListener(new java.awt.event.ActionListener() {
@@ -662,7 +738,7 @@ public final class Interface extends javax.swing.JFrame {
         });
         jPanelRelacionesVolumetricas.add(jCBGradoSaturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, -1));
 
-        panelQCalc.add(jPanelRelacionesVolumetricas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 310, 100));
+        panelQCalc.add(jPanelRelacionesVolumetricas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 310, 90));
 
         jPanelRelacionesGravimetricas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Relaciones Gravimétricas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(51, 51, 255))); // NOI18N
         jPanelRelacionesGravimetricas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -699,9 +775,7 @@ public final class Interface extends javax.swing.JFrame {
         });
         jPanelRelacionesGravimetricas.add(jCBGravedadEspecifica, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
 
-        panelQCalc.add(jPanelRelacionesGravimetricas, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 370, 100));
-
-        jPanelDatos.add(panelQCalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 720, 150));
+        panelQCalc.add(jPanelRelacionesGravimetricas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 370, 100));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tipo de Muestra", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -712,7 +786,7 @@ public final class Interface extends javax.swing.JFrame {
                 jButtonNormalActionPerformed(evt);
             }
         });
-        jPanel5.add(jButtonNormal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 80, -1));
+        jPanel5.add(jButtonNormal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 80, -1));
 
         jButtonSaturado.setText("Saturado");
         jButtonSaturado.addActionListener(new java.awt.event.ActionListener() {
@@ -720,22 +794,24 @@ public final class Interface extends javax.swing.JFrame {
                 jButtonSaturadoActionPerformed(evt);
             }
         });
-        jPanel5.add(jButtonSaturado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 80, -1));
+        jPanel5.add(jButtonSaturado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 80, -1));
 
-        jPanelDatos.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 250, 80));
+        panelQCalc.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 220, 70));
 
         B_Formulas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 B_FormulasActionPerformed(evt);
             }
         });
-        jPanelDatos.add(B_Formulas, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 60, 50));
+        panelQCalc.add(B_Formulas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 60, 50));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Fórmulas");
-        jPanelDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 90, 60, -1));
+        panelQCalc.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 60, -1));
 
-        getContentPane().add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 1320, 290));
+        jPanelDatos.add(panelQCalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 720, 250));
+
+        getContentPane().add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1360, 290));
 
         jPanelResultados.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(0, 51, 255))); // NOI18N
         jPanelResultados.setToolTipText("Resultados");
@@ -763,11 +839,11 @@ public final class Interface extends javax.swing.JFrame {
                 B_ProcedimientoActionPerformed(evt);
             }
         });
-        getContentPane().add(B_Procedimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 490, 60, 60));
+        getContentPane().add(B_Procedimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 460, 60, 60));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Procedimiento");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 550, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 520, -1, -1));
 
         B_limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -783,29 +859,9 @@ public final class Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtPes_TotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPes_TotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtPes_TotalActionPerformed
-
-    private void jtVol_solidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtVol_solidosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtVol_solidosActionPerformed
-
-    private void jtVol_AireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtVol_AireActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtVol_AireActionPerformed
-
-    private void jtPes_AguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPes_AguaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtPes_AguaActionPerformed
-
     private void jtPes_SolidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPes_SolidActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtPes_SolidActionPerformed
-
-    private void jtPes_AireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPes_AireActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtPes_AireActionPerformed
 
     private void B_CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_CalcularActionPerformed
         // TODO add your handling code here:
@@ -827,7 +883,7 @@ public final class Interface extends javax.swing.JFrame {
         //Porosidad
         if (jCBPorosidad.isSelected() == true) {
             Rel_V_P.setPorosidad(volumen.getVol_Vacios(), volumen.getVol_Total());
-            TxtArea_Resultado.append("Porosidad: " + Rel_V_P.getPorosidad() + " %" );
+            TxtArea_Resultado.append("Porosidad: " + Rel_V_P.getPorosidad() + " %");
             if (29.0 <= Rel_V_P.getPorosidad() && Rel_V_P.getPorosidad() <= 50) {
                 TxtArea_Resultado.append(" <------ Arena Limpia y uniforme" + "\n" + "\n");
             } else if (23 <= Rel_V_P.getPorosidad() && Rel_V_P.getPorosidad() <= 47) {
@@ -845,7 +901,7 @@ public final class Interface extends javax.swing.JFrame {
         //Grado de Saturación
         if (jCBGradoSaturacion.isSelected() == true) {
             Rel_V_P.setGrado_Saturacion(volumen.getVol_Agua(), volumen.getVol_Vacios());
-            TxtArea_Resultado.append("\n"+"Grado de Saturación: " + Double.toString(Rel_V_P.getGrado_Saturacion()) + "%");
+            TxtArea_Resultado.append("\n" + "Grado de Saturación: " + Double.toString(Rel_V_P.getGrado_Saturacion()) + "%");
             if (0 <= Rel_V_P.getGrado_Saturacion() && Rel_V_P.getGrado_Saturacion() <= 25) {
                 TxtArea_Resultado.append(" <------ Suelo Seco" + "\n" + "\n");
             } else if (26 <= Rel_V_P.getGrado_Saturacion() && Rel_V_P.getGrado_Saturacion() <= 50) {
@@ -874,7 +930,7 @@ public final class Interface extends javax.swing.JFrame {
         //Peso Especifico Seco
         if (jCBPesoEspecificoSeco.isSelected() == true) {
             Rel_V_P.setPeso_Espec_Seco(peso.getPes_Solidos(), volumen.getVol_Total());
-            TxtArea_Resultado.append("Peso Específico Seco: " + Double.toString(Rel_V_P.getPeso_Espec_Seco()) + " g/cm3" );
+            TxtArea_Resultado.append("Peso Específico Seco: " + Double.toString(Rel_V_P.getPeso_Espec_Seco()) + " g/cm3");
             if (1.33 <= Rel_V_P.getPeso_Espec_Seco() && Rel_V_P.getPeso_Espec_Seco() <= 1.89) {
                 TxtArea_Resultado.append(" <------ Arena Limpia y uniforme" + "\n" + "\n");
             } else if (1.39 <= Rel_V_P.getPeso_Espec_Seco() && Rel_V_P.getPeso_Espec_Seco() <= 2.03) {
@@ -892,73 +948,9 @@ public final class Interface extends javax.swing.JFrame {
         //Gravedad Especifica de Solidos
         if (jCBGravedadEspecifica.isSelected() == true) {
             Rel_V_P.setGrav_Espec_sol(peso.getPes_Solidos(), volumen.getVol_Solidos());
-            TxtArea_Resultado.append("Gravedad Específica: " + Double.toString(Rel_V_P.getGrav_Espec_sol()) + " g/cm3" + "\n" + "\n");
+            TxtArea_Resultado.append("\n" + "Gravedad Específica: " + Double.toString(Rel_V_P.getGrav_Espec_sol()) + " g/cm3" + "\n" + "\n");
         }
     }//GEN-LAST:event_B_CalcularActionPerformed
-
-    private void jtVol_VacioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_VacioKeyReleased
-        // TODO add your handling code here:
-        String Vv = jtVol_Vacio.getText();
-        if ((Vv.equals("") == false && Vv.matches("[a-z].*") == false) || Vv.contains(".")) {
-            volumen.setVol_Vacios(Double.parseDouble(Vv));
-        } else {
-            volumen.setVol_Vacios(0.0);
-        }
-
-    }//GEN-LAST:event_jtVol_VacioKeyReleased
-
-    private void jtVol_AireKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_AireKeyReleased
-        // TODO add your handling code here:
-        String Va = jtVol_Aire.getText();
-        if ((Va.equals("") == false && Va.matches("[a-z].*") == false) || Va.contains(".")) {
-            volumen.setVol_Aire(Double.parseDouble(Va));
-        } else {
-            volumen.setVol_Aire(0.0);
-        }
-
-    }//GEN-LAST:event_jtVol_AireKeyReleased
-
-    private void jtPes_AguaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_AguaKeyReleased
-        // TODO add your handling code here:
-        String Ww = jtPes_Agua.getText();
-
-        if (Ww.equals("") == false && Ww.matches("[a-z].*") == false || Ww.contains(".")) {
-            peso.setPes_Agua(Double.parseDouble(Ww));
-        } else {
-            peso.setPes_Agua(0.0);
-        }
-    }//GEN-LAST:event_jtPes_AguaKeyReleased
-
-    private void jtPes_SolidKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_SolidKeyReleased
-        // TODO add your handling code here:
-        String Ws = jtPes_Solid.getText();
-        if (Ws.equals("") == false && Ws.matches("[a-z].*") == false || Ws.contains(".")) {
-
-            peso.setPes_Solidos(Double.parseDouble(Ws));
-        } else {
-            peso.setPes_Solidos(0.0);
-        }
-    }//GEN-LAST:event_jtPes_SolidKeyReleased
-
-    private void jtPes_TotalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_TotalKeyReleased
-        // TODO add your handling code here:
-        String Wt = jtPes_Total.getText();
-        if (Wt.equals("") == false && Wt.matches("[a-z].*") == false || Wt.contains(".")) {
-            peso.setPes_Total(Double.parseDouble(Wt));
-        } else {
-            peso.setPes_Total(0.0);
-        }
-    }//GEN-LAST:event_jtPes_TotalKeyReleased
-
-    private void jtPes_AireKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_AireKeyReleased
-        // TODO add your handling code here:
-        String Wa = jtPes_Aire.getText();
-        if (Wa.equals("") == false && Wa.matches("[a-z].*") == false || Wa.contains(".")) {
-            graf_Wt.setText(Double.toString(peso.getPes_Total()));
-        } else {
-            peso.setPes_Aire(0.0);
-        }
-    }//GEN-LAST:event_jtPes_AireKeyReleased
 
     private void jCBRelacionVacioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBRelacionVacioActionPerformed
         // TODO add your handling code here:
@@ -1139,8 +1131,37 @@ public final class Interface extends javax.swing.JFrame {
         for (Component RG : jPanelRelacionesGravimetricas.getComponents()) {
             RG.setEnabled(true);
         }
-
+        activar(panelvolumen);
+        activar(panelpeso);
+        activar(paneldatos);
         B_Graf.setEnabled(true);
+        /*volumen.setVol_Agua(0.0);
+        volumen.setVol_Aire(0.0);
+        volumen.setVol_Solidos(0.0);
+        volumen.setVol_Total(0.0);
+        volumen.setVol_Vacios(0.0);
+        peso.setPes_Agua(0.0);
+        peso.setPes_Aire(0.0);
+        peso.setPes_Solidos(0.0);
+        peso.setPes_Solidos(0.0);
+        graf_Ww.setText(Double.toString(peso.getPes_Agua()));
+        jtPes_Agua.setText(Double.toString(peso.getPes_Agua()));
+        graf_Ws.setText(Double.toString(peso.getPes_Solidos()));
+        jtPes_Solid.setText(Double.toString(peso.getPes_Solidos()));
+        graf_Wa.setText(Double.toString(peso.getPes_Aire()));
+        jtPes_Aire.setText(Double.toString(peso.getPes_Aire()));
+        graf_Wt.setText(Double.toString(peso.getPes_Total()));
+        jtPes_Total.setText(Double.toString(peso.getPes_Total()));
+        graf_Vt.setText(Double.toString(volumen.getVol_Total()));
+        jtVol_Total.setText(Double.toString(volumen.getVol_Total()));
+        graf_Vv.setText(Double.toString(volumen.getVol_Vacios()));
+        jtVol_Vacio.setText(Double.toString(volumen.getVol_Vacios()));
+        graf_Vw.setText(Double.toString(volumen.getVol_Agua()));
+        jtVol_Agua.setText(Double.toString(volumen.getVol_Agua()));
+        graf_Va.setText(Double.toString(volumen.getVol_Aire()));
+        jtVol_Aire.setText(Double.toString(volumen.getVol_Aire()));
+        graf_Vs.setText(Double.toString(volumen.getVol_Solidos()));
+        jtVol_solidos.setText(Double.toString(volumen.getVol_Solidos()));*/
 
 
     }//GEN-LAST:event_jButtonNormalActionPerformed
@@ -1167,6 +1188,9 @@ public final class Interface extends javax.swing.JFrame {
         for (Component RG : jPanelRelacionesGravimetricas.getComponents()) {
             RG.setEnabled(true);
         }
+        activar(panelvolumen);
+        activar(panelpeso);
+        activar(paneldatos);
         B_Graf.setEnabled(true);
 
 
@@ -1190,36 +1214,6 @@ public final class Interface extends javax.swing.JFrame {
             jtVol_Aire.setEnabled(false);
         }
     }//GEN-LAST:event_jCB_VolAireActionPerformed
-
-    private void jtVol_TotalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_TotalKeyReleased
-        // TODO add your handling code here:
-        String Vt = jtVol_Total.getText();
-        if ((Vt.equals("") == false && Vt.matches("[a-z].*") == false) || Vt.contains(".")) {
-            volumen.setVol_Total(Double.parseDouble(Vt));
-        } else {
-            volumen.setVol_Total(0.0);
-        }
-    }//GEN-LAST:event_jtVol_TotalKeyReleased
-
-    private void jtVol_AguaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_AguaKeyReleased
-        // TODO add your handling code here:
-        String Vw = jtVol_Agua.getText();
-        if ((Vw.equals("") == false && Vw.matches("[a-z].*") == false) || Vw.contains(".")) {
-            volumen.setVol_Agua(Double.parseDouble(Vw));
-        } else {
-            volumen.setVol_Agua(0.0);
-        }
-    }//GEN-LAST:event_jtVol_AguaKeyReleased
-
-    private void jtVol_solidosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_solidosKeyReleased
-        // TODO add your handling code here:
-        String Vs = jtVol_solidos.getText();
-        if ((Vs.equals("") == false && Vs.matches("[a-z].*") == false) || Vs.contains(".")) {
-            volumen.setVol_Solidos(Double.parseDouble(Vs));
-        } else {
-            volumen.setVol_Solidos(0.0);
-        }
-    }//GEN-LAST:event_jtVol_solidosKeyReleased
 
     private void B_FormulasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_FormulasActionPerformed
         // TODO add your handling code here:
@@ -1340,47 +1334,98 @@ public final class Interface extends javax.swing.JFrame {
 
     }//GEN-LAST:event_B_ProcedimientoActionPerformed
 
-    private void jtVol_VacioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtVol_VacioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtVol_VacioActionPerformed
-
     private void B_GrafActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_GrafActionPerformed
         // TODO add your handling code here:
-
-        String Ww = jtPes_Agua.getText();
+        countgraf++;
+        if(2>countgraf){
+            JOptionPane.showMessageDialog(null, "presionar tantas veces hasta obtener los datos necesarios");
+        }
+        
         String Wa = jtPes_Aire.getText();
+        peso.setPes_Aire(Double.parseDouble(Wa));
+        String Ww = jtPes_Agua.getText();
+        peso.setPes_Agua(Double.parseDouble(Ww));
         String Ws = jtPes_Solid.getText();
+        peso.setPes_Solidos(Double.parseDouble(Ws));
         String Wt = jtPes_Total.getText();
-
+        peso.setPes_Total(Double.parseDouble(Wt));
+        String WEa = jtPes_EspAgua.getText();
+        String WEs = jtPes_EspSol.getText();
         String Va = jtVol_Aire.getText();
         String Vw = jtVol_Agua.getText();
+        volumen.setVol_Agua(Double.parseDouble(Vw));
         String Vv = jtVol_Vacio.getText();
+        volumen.setVol_Vacios(Double.parseDouble(Vv));
         String Vs = jtVol_solidos.getText();
+        volumen.setVol_Solidos(Double.parseDouble(Vs));
         String Vt = jtVol_Total.getText();
+        volumen.setVol_Total(Double.parseDouble(Vt));
 
-        peso.setPes_Agua(Double.parseDouble(Ww));
-        peso.setPes_Aire(Double.parseDouble(Wa));
-        peso.setPes_Solidos(Double.parseDouble(Ws));
-        peso.setPes_Total(Double.parseDouble(Wt));
+        //Peso especifico de agua
+        if (WEa.equals("") == true || WEa.matches("[a-z].*") == true) {
+            JOptionPane.showMessageDialog(null, "Peso Específico de Agua:" + "\n" + "falta datos o no es un número");
+        } else {
+            Rel_V_P.setPeso_Espec_agua(Double.parseDouble(WEa), peso.getPes_Agua(), Double.parseDouble(Vw));
+        }
+        //Peso especifico de solido
+        if (WEs.equals("") == true || WEs.matches("[a-z].*") == true) {
+            JOptionPane.showMessageDialog(null, "Peso Específico de solido:" + "\n" + "falta datos o no es un número");
+        } else {
+            Rel_V_P.setPeso_Espec_solido(Double.parseDouble(WEs), Double.parseDouble(Ws), Double.parseDouble(Vs));
+        }
+        //Volumen de aire
+
+        volumen.setVol_Aire(Double.parseDouble(Va));
+        graf_Va.setText(Double.toString(volumen.getVol_Aire()));
+        jtVol_Aire.setText(Double.toString(volumen.getVol_Aire()));
+
+        //Volumen de Agua
+        if (volumen.getVol_Vacios() == 0.0 && volumen.getVol_Agua() == 0.0) {
+            double Vagua = peso.getPes_Agua() / Rel_V_P.getPeso_Espec_agua();
+            double Resp_Vagua = Math.round((Vagua) * 100.0) / 100.0;
+            volumen.setVol_Agua(Resp_Vagua);
+            graf_Vw.setText(Double.toString(volumen.getVol_Agua()));
+            jtVol_Agua.setText(Double.toString(volumen.getVol_Agua()));
+
+        } else {
+            volumen.setVol_Agua(0.0);
+            graf_Vw.setText(Double.toString(volumen.getVol_Agua()));
+            jtVol_Agua.setText(Double.toString(volumen.getVol_Agua()));
+        }
+
+        //Volumen de sólidos
+        if (volumen.getVol_Vacios() == 0.0) {
+            double Vsolido = peso.getPes_Solidos() / Rel_V_P.getPeso_Espec_solido();
+            double Resp_Vsolido = Math.round((Vsolido) * 100.0) / 100.0;
+            volumen.setVol_Solidos(Resp_Vsolido);
+            graf_Vs.setText(Double.toString(volumen.getVol_Solidos()));
+            jtVol_solidos.setText(Double.toString(volumen.getVol_Solidos()));
+
+        } else {
+            volumen.setVol_Solidos(0.0);
+            graf_Vs.setText(Double.toString(volumen.getVol_Solidos()));
+            jtVol_solidos.setText(Double.toString(volumen.getVol_Solidos()));
+        }
+
+        //Volumen de vacios
+        volumen.setVol_Vacios(Double.parseDouble(Vv));
+        graf_Vv.setText(Double.toString(volumen.getVol_Vacios()));
+        jtVol_Vacio.setText(Double.toString(volumen.getVol_Vacios()));
+
+        //Volumen total
+        volumen.setVol_Total(Double.parseDouble(Vt));
+        graf_Vt.setText(Double.toString(volumen.getVol_Total()));
+        jtVol_Total.setText(Double.toString(volumen.getVol_Total()));
+
+        graf_Wt.setText(Double.toString(peso.getPes_Total()));
+        jtPes_Total.setText(Double.toString(peso.getPes_Total()));
 
         graf_Ww.setText(Double.toString(peso.getPes_Agua()));
-        graf_Wa.setText(Double.toString(peso.getPes_Aire()));
+        jtPes_Agua.setText(Double.toString(peso.getPes_Agua()));
         graf_Ws.setText(Double.toString(peso.getPes_Solidos()));
-        graf_Wt.setText(Double.toString(peso.getPes_Total()));
-
-        //
-        volumen.setVol_Aire(Double.parseDouble(Va));
-        volumen.setVol_Agua(Double.parseDouble(Vw));
-        volumen.setVol_Solidos(Double.parseDouble(Vs));
-        volumen.setVol_Vacios(Double.parseDouble(Vv));
-        volumen.setVol_Total(Double.parseDouble(Vt));
-        //
-        graf_Va.setText(Double.toString(volumen.getVol_Aire()));
-        graf_Vw.setText(Double.toString(volumen.getVol_Agua()));
-        graf_Vs.setText(Double.toString(volumen.getVol_Solidos()));
-        graf_Vv.setText(Double.toString(volumen.getVol_Vacios()));
-        graf_Vt.setText(Double.toString(volumen.getVol_Total()));
-
+        jtPes_Solid.setText(Double.toString(peso.getPes_Solidos()));
+        graf_Wa.setText(Double.toString(peso.getPes_Aire()));
+        jtPes_Aire.setText(Double.toString(peso.getPes_Aire()));
         //activar grafico
         for (Component PGraf : jPanelGraficaMuestra.getComponents()) {
             PGraf.setEnabled(true);
@@ -1394,17 +1439,220 @@ public final class Interface extends javax.swing.JFrame {
 
     }//GEN-LAST:event_B_GrafActionPerformed
 
+    private void jCB_PesTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_PesTotalActionPerformed
+        // TODO add your handling code here:
+        if (jCB_PesTotal.isSelected() == true) {
+            jtPes_Total.setEnabled(true);
+
+        } else {
+            jtPes_Total.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_PesTotalActionPerformed
+
+    private void jCB_VolAgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_VolAgActionPerformed
+        // TODO add your handling code here:
+
+        if (jCB_VolAg.isSelected() == true) {
+            jtVol_Agua.setEnabled(true);
+
+        } else {
+            jtVol_Agua.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_VolAgActionPerformed
+
+    private void jCB_VolTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_VolTotalActionPerformed
+        // TODO add your handling code here:
+        if (jCB_VolTotal.isSelected() == true) {
+            jtVol_Total.setEnabled(true);
+
+        } else {
+            jtVol_Total.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_VolTotalActionPerformed
+
+    private void jCB_VolSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_VolSActionPerformed
+        // TODO add your handling code here:
+
+        if (jCB_VolS.isSelected() == true) {
+            jtVol_solidos.setEnabled(true);
+
+        } else {
+            jtVol_solidos.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_VolSActionPerformed
+
+    private void jCB_VolVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_VolVActionPerformed
+        // TODO add your handling code here:
+
+        if (jCB_VolV.isSelected() == true) {
+            jtVol_Vacio.setEnabled(true);
+
+        } else {
+            jtVol_Vacio.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_VolVActionPerformed
+
+    private void jCB_PesAgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_PesAgActionPerformed
+        // TODO add your handling code here:
+        if (jCB_PesAg.isSelected() == true) {
+            jtPes_Agua.setEnabled(true);
+
+        } else {
+            jtPes_Agua.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_PesAgActionPerformed
+
+    private void jCB_PesSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_PesSActionPerformed
+        // TODO add your handling code here:
+        if (jCB_PesS.isSelected() == true) {
+            jtPes_Solid.setEnabled(true);
+
+        } else {
+            jtPes_Solid.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_PesSActionPerformed
+
+    private void jCB_PesEspAgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_PesEspAgActionPerformed
+        // TODO add your handling code here:
+        if (jCB_PesEspAg.isSelected() == true) {
+            jtPes_EspAgua.setEnabled(true);
+
+        } else {
+            jtPes_EspAgua.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_PesEspAgActionPerformed
+
+    private void jtPes_EspAguaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_EspAguaKeyReleased
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jtPes_EspAguaKeyReleased
+
+    private void jtPes_AguaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_AguaKeyReleased
+        // TODO add your handling code here:
+        String Ww = jtPes_Agua.getText();
+        //Peso de agua
+        if (Ww.equals("") == true || Ww.matches("[a-z].*") == true) {
+            JOptionPane.showMessageDialog(null, "Peso de agua:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtPes_AguaKeyReleased
+
+    private void jtPes_SolidKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_SolidKeyReleased
+        // TODO add your handling code here:
+        String Ws = jtPes_Solid.getText();
+        if (Ws.equals("") == true || Ws.matches("[a-z].*") == true) {
+            JOptionPane.showMessageDialog(null, "Peso de Sólido:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtPes_SolidKeyReleased
+
+    private void jtPes_AireKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_AireKeyReleased
+        // TODO add your handling code here:
+        String Wa = jtPes_Aire.getText();
+        if (Wa.equals("") == true || Wa.matches("[a-z].*") == true) {
+            JOptionPane.showMessageDialog(null, "Peso de Aire:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtPes_AireKeyReleased
+
+    private void jtPes_TotalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_TotalKeyReleased
+        // TODO add your handling code here:
+        String Wt = jtPes_Total.getText();
+        if (Wt.equals("") == true || Wt.matches("[a-z].*")) {
+            JOptionPane.showMessageDialog(null, "Peso Total:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtPes_TotalKeyReleased
+
+    private void jtVol_VacioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_VacioKeyReleased
+
+        String Vv = jtVol_Vacio.getText();;
+        if (Vv.equals("") == true || Vv.matches("[a-z].*") == true) {
+            JOptionPane.showMessageDialog(null, "Volumen de Vacios:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtVol_VacioKeyReleased
+
+    private void jtVol_AireKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_AireKeyReleased
+        // TODO add your handling code here:
+        String Va = jtVol_Aire.getText();
+
+        if (Va.equals("") == true || Va.matches("[a-z].*") == true) {
+            JOptionPane.showMessageDialog(null, "Volumen de Aire:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtVol_AireKeyReleased
+
+    private void jtVol_TotalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_TotalKeyReleased
+        // TODO add your handling code here:
+        String Vt = jtVol_Total.getText();
+        if (Vt.equals("") == true || Vt.matches("[a-z].*")) {
+            JOptionPane.showMessageDialog(null, "Volumen Total:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtVol_TotalKeyReleased
+
+    private void jtVol_solidosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_solidosKeyReleased
+
+        String Vs = jtVol_solidos.getText();
+        if (Vs.equals("") == true || Vs.matches("[a-z].*") == true) {
+            JOptionPane.showMessageDialog(null, "Volumen de Sólido:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtVol_solidosKeyReleased
+
+    private void jtVol_AguaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtVol_AguaKeyReleased
+        // TODO add your handling code here:
+        String Vw = jtVol_Agua.getText();
+        if (Vw.equals("") == true || Vw.matches("[a-z].*")) {
+            JOptionPane.showMessageDialog(null, "Volumen de Agua:" + "\n" + "falta datos o no es un número");
+        }
+    }//GEN-LAST:event_jtVol_AguaKeyReleased
+
+    private void jtPes_EspSolKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPes_EspSolKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtPes_EspSolKeyReleased
+
+    private void jCB_PesEspSolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_PesEspSolActionPerformed
+        // TODO add your handling code here:
+        if (jCB_PesEspSol.isSelected() == true) {
+            jtPes_EspSol.setEnabled(true);
+
+        } else {
+            jtPes_EspSol.setEnabled(false);
+        }
+    }//GEN-LAST:event_jCB_PesEspSolActionPerformed
+
     private void B_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_limpiarActionPerformed
         // TODO add your handling code here:
+        Interface vent_interfaz = new Interface();
+        vent_interfaz.setVisible(true);
+        this.setVisible(false);
         Limpiar(panelGaseoso);
         Limpiar(jPanelGraficaMuestra);
         Limpiar(jPanelRelacionesVolumetricas);
         Limpiar(jPanelRelacionesGravimetricas);
         Limpiar(panelvolumen);
         Limpiar(panelpeso);
+        jtPes_EspAgua.setText("1.0");
+        jtPes_EspSol.setText("1.0");
+        jCB_PesEspAg.setEnabled(false);
+        jCB_PesEspSol.setEnabled(false);
 
+        /*graf_Ww.setText("0.0");
+        jtPes_Agua.setText("0.0");
+        graf_Ws.setText("0.0");
+        jtPes_Solid.setText("0.0");
+        graf_Wa.setText("0.0");
+        jtPes_Aire.setText("0.0");
+        graf_Wt.setText("0.0");
+        jtPes_Total.setText("0.0");
+        graf_Vt.setText("0.0");
+        jtVol_Total.setText("0.0");
+        graf_Vv.setText("0.0");
+        jtVol_Vacio.setText("0.0");
+        graf_Vw.setText("0.0");
+        jtVol_Agua.setText("0.0");
+        graf_Va.setText("0.0");
+        jtVol_Aire.setText("0.0");*/
 
     }//GEN-LAST:event_B_limpiarActionPerformed
+
+    private void jtVol_AguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtVol_AguaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtVol_AguaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1486,8 +1734,17 @@ public final class Interface extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCBPesoEspecificoSeco;
     private javax.swing.JCheckBox jCBPorosidad;
     private javax.swing.JCheckBox jCBRelacionVacio;
+    private javax.swing.JCheckBox jCB_PesAg;
+    private javax.swing.JCheckBox jCB_PesEspAg;
+    private javax.swing.JCheckBox jCB_PesEspSol;
+    private javax.swing.JCheckBox jCB_PesS;
+    private javax.swing.JCheckBox jCB_PesTotal;
     private javax.swing.JCheckBox jCB_PesoAire;
+    private javax.swing.JCheckBox jCB_VolAg;
     private javax.swing.JCheckBox jCB_VolAire;
+    private javax.swing.JCheckBox jCB_VolS;
+    private javax.swing.JCheckBox jCB_VolTotal;
+    private javax.swing.JCheckBox jCB_VolV;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
@@ -1500,10 +1757,12 @@ public final class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelFASELIQUIDA;
     private javax.swing.JLabel jLabelFASESOLIDA;
     private javax.swing.JLabel jLabelPESO;
@@ -1515,7 +1774,6 @@ public final class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelWs;
     private javax.swing.JLabel jLabelWt;
     private javax.swing.JLabel jLabelWw;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
@@ -1553,6 +1811,8 @@ public final class Interface extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jtPes_Agua;
     private javax.swing.JTextField jtPes_Aire;
+    private javax.swing.JTextField jtPes_EspAgua;
+    private javax.swing.JTextField jtPes_EspSol;
     private javax.swing.JTextField jtPes_Solid;
     private javax.swing.JTextField jtPes_Total;
     private javax.swing.JTextField jtVol_Agua;
@@ -1562,6 +1822,7 @@ public final class Interface extends javax.swing.JFrame {
     private javax.swing.JTextField jtVol_solidos;
     private javax.swing.JPanel panelGaseoso;
     private javax.swing.JPanel panelQCalc;
+    private javax.swing.JPanel paneldatos;
     private javax.swing.JPanel panelpeso;
     private javax.swing.JPanel panelvolumen;
     private javax.swing.JLabel textaire;
